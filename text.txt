@@ -1,6 +1,3 @@
-Colum name	data type	details
-id	integer	not null,primary key
-username	string	not null, indexed, uniqe
-email	string	not null, indexed, uniqe
-password_digest	string	not null, indexed, unique
-timestamp	datetime	not null
+npm install --save webpack react react-dom react-redux redux redux-logger babel-core babel-loader babel-preset-react babel-preset-env
+
+kill server: {kill -9} 
