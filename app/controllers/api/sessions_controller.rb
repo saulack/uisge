@@ -8,6 +8,7 @@ class Api::SessionsController < ApplicationController
     )
     if @user
       login(@user)
+      render 'api/users/show.json.jbuilder'
     else
       render json: ['invalid username or password']
     end
@@ -15,7 +16,7 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     logout
-    render 'api/sessions/show.html.jbuilder'
+    render 'api/show.json.jbuilder'
   end
 
 
