@@ -29,11 +29,11 @@ class Greeting extends React.Component {
 
          <div className="sign-name-parent">
            <div className="sign-user">
-             <Link to="/signup"> Sign Up </Link>
+             <Link to="/signup">Sign Up</Link>
            </div>
 
            <div className="sign-user">
-             <Link to="/login"> Log In </Link>
+             <Link to="/login">Log In</Link>
            </div>
          </div>
 

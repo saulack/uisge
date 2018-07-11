@@ -42,7 +42,8 @@ class SessionForm extends React.Component {
   render() {
     let emailInput;
     if (this.props.formType === 'Sign Up') {
-      emailInput = <label>Email:
+      emailInput = <label className="text-box-box"><i class="fa fa-envelope" aria-hidden="true">   |</i>
+
         <input className="text-box" onChange={this.update('email')} type="text" />
       </label>;
     }
@@ -52,20 +53,27 @@ class SessionForm extends React.Component {
       <div className="session-log">
 
       <form className="log-form" onSubmit={this.handleSubmit}>
-        <h1 className="title">{this.props.formType}</h1>
+        <h1 className="title">UISGE</h1>
+        <h3 className="sub-title">Today's rain</h3>
         {this.handleErrors()}
+
         {emailInput}
-        <br/>
-        <label> Username:
+
+
+        <label className="text-box-box">
+          <i class="fa fa-user">   |</i>
           <input className="text-box" onChange={this.update('username')} type="text" value={this.state.username} />
         </label>
-        <br/>
-        <label> Password:
+
+
+        <label className="text-box-box">
+          <i class="fa fa-lock" aria-hidden="true">   |</i>
           <input className="text-box" onChange={this.update('password')} type="password" value={this.state.password} />
         </label>
-        <br/>
+
+
         <input className="submit" type="submit" value={this.props.formType} />
-          <br/>
+        <div className="line">______________________</div>
         {this.props.navLink}
         </form>
     </div>
