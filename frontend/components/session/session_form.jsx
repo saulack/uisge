@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -18,14 +20,14 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
      e.preventDefault();
      const user = Object.assign({}, this.state);
-     this.props.processForm(user);
+     this.props.processForm();
    }
 
 
   render() {
     let emailInput;
-    if (this.props.formType === signup) {
-      emailInput = <input onChange={this.update('email')} type="text" />
+    if (this.props.formType === 'Sign Up') {
+      emailInput = <lable>email:<input onChange={this.update('email')} type="text" /></lable>;
     }
 
     return (
@@ -33,11 +35,16 @@ class SessionForm extends React.Component {
         <h1>UISGE</h1>
         <h3>{this.props.formType}</h3>
       <form onSubmit={this.handleSubmit}>
-        <input onChange={this.update('username')} type="text" value={this.state.username} />
-        <input onChange={this.update('password')} type="password" value={this.state.password} />
+        <label> Username:
+          <input onChange={this.update('username')} type="text" value={this.state.username} />
+        </label>
+        <label> Password:
+          <input onChange={this.update('password')} type="password" value={this.state.password} />
+        </label>
         {emailInput}
         <input type="submit" value={this.props.formType} />
       </form>
+      {this.props.navLink}
     </div>
     )
   }

@@ -8,8 +8,10 @@ const App = () => {
   return(
 
     <div>
+      <header>
       <h1>UISGE-BEATHA</h1>
       <GreetingContainer />
+      </header>
 
 
       <Route path="/login" component={LoginFormContainer} />
