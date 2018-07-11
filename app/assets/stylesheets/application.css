@@ -45,21 +45,17 @@
    background: #221812;
    font-family: 'UnifrakturMaguntia', cursive;
    color: white;
-   font-size: 25px;
+   font-size: 20px;
  }
 
  .sign-name-parent {
    display: flex;
-   justify-content: space-between;
-   margin auto;
+   justify-content: flex-end;
  }
 
  .sign-user {
-    display: flex;
-    align-content: space-around;
-    justify-content: space-between;
     font-family: sans-serif;
-    align-items: center;
+    font-size: 15px;
     margin: 5px;
     padding: 5px
  }
