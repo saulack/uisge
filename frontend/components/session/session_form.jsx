@@ -54,6 +54,8 @@ class SessionForm extends React.Component {
       <form className="log-form" onSubmit={this.handleSubmit}>
         <h1 className="title">{this.props.formType}</h1>
         {this.handleErrors()}
+        {emailInput}
+        <br/>
         <label> Username:
           <input className="text-box" onChange={this.update('username')} type="text" value={this.state.username} />
         </label>
@@ -62,7 +64,6 @@ class SessionForm extends React.Component {
           <input className="text-box" onChange={this.update('password')} type="password" value={this.state.password} />
         </label>
         <br/>
-        {emailInput}
         <input className="submit" type="submit" value={this.props.formType} />
           <br/>
         {this.props.navLink}

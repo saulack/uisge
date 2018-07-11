@@ -60,7 +60,19 @@
     padding: 5px
  }
 
+ .submit {
+   border: 1px solid white;
+   padding: 10px;
+   margin: 25px;
+ }
+
+ .submit:hover {
+   background: white;
+   color: black;
+ }
+
  .errors {
+   color: red;
    padding: 15px;
-   color: white
+   font-family: 'Tangerine', cursive;
  }
