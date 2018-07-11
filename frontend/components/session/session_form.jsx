@@ -29,7 +29,9 @@ class SessionForm extends React.Component {
   render() {
     let emailInput;
     if (this.props.formType === 'Sign Up') {
-      emailInput = <label>Email: <input className="text-box" onChange={this.update('email')} type="text" /></label>;
+      emailInput = <label>Email: 
+        <input className="text-box" onChange={this.update('email')} type="text" />
+      </label>;
     }
 
     return (
