@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.handleErrors = this.handleErrors.bind(this);
   }
 
 
@@ -26,19 +27,33 @@ class SessionForm extends React.Component {
    }
 
 
+   handleErrors() {
+     return(
+       <ul>
+         {this.props.errors.map((error, i) => (
+           <li className="errors" key={`err_key${i}`}>
+             {error}
+           </li>
+         ))}
+       </ul>
+     );
+   }
+
   render() {
     let emailInput;
     if (this.props.formType === 'Sign Up') {
-      emailInput = <label>Email: 
+      emailInput = <label>Email:
         <input className="text-box" onChange={this.update('email')} type="text" />
       </label>;
     }
+
 
     return (
       <div className="session-log">
 
       <form className="log-form" onSubmit={this.handleSubmit}>
         <h1 className="title">{this.props.formType}</h1>
+        {this.handleErrors()}
         <label> Username:
           <input className="text-box" onChange={this.update('username')} type="text" value={this.state.username} />
         </label>

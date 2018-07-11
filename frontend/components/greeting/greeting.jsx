@@ -19,8 +19,8 @@ class Greeting extends React.Component {
       return(
 
          <div className="sign-name-parent">
-           <h3>{this.props.currentUser.username}</h3>
-           <button onClick={this.handleSubmit}>Logout</button>
+           <h2 className="sign-user">{this.props.currentUser.username}</h2>
+           <button className="sign-user" onClick={this.handleSubmit}>Logout</button>
          </div>
      );
    } else {
@@ -29,7 +29,7 @@ class Greeting extends React.Component {
 
          <div className="sign-name-parent">
            <div className="sign-user">
-             <Link className="sign-user" to="/signup"> Sign Up </Link>
+             <Link to="/signup"> Sign Up </Link>
            </div>
 
            <div className="sign-user">
