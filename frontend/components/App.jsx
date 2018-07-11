@@ -8,12 +8,12 @@ const App = () => {
   return(
 
     <div>
-      <header>
-      <h1>UISGE-BEATHA</h1>
+      <header className="navBar">
+      <h1>Uisge</h1>
       <GreetingContainer />
       </header>
 
-
+      
       <Route path="/login" component={LoginFormContainer} />
       <Route path="/signup" component={SignupFormContainer} />
 

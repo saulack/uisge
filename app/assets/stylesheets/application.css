@@ -35,3 +35,30 @@
    background: transparent;
    list-style: none;
  }
+
+ .navBar {
+   display: flex;
+   justify-content: space-between;
+   align-content: center;
+   padding: 15px;
+   background: #221812;
+   font-family: 'UnifrakturMaguntia', cursive;
+   color: white;
+   font-size: 70px:
+ }
+
+ .sign-name-parent {
+   display: flex;
+   justify-content: space-between;
+   margin auto;
+ }
+
+   .sign-user {
+      display: flex;
+      align-content: space-around;
+      justify-content: space-between;
+      font-family: sans-serif;
+      align-items: center;
+      margin: auto;
+      border: 1px solid white;t`
+   }
