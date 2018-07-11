@@ -39,12 +39,13 @@
  .navBar {
    display: flex;
    justify-content: space-between;
+   align-items: baseline;
    align-content: center;
-   padding: 15px;
+   padding: 10px;
    background: #221812;
    font-family: 'UnifrakturMaguntia', cursive;
    color: white;
-   font-size: 70px:
+   font-size: 25px;
  }
 
  .sign-name-parent {
@@ -61,9 +62,4 @@
     align-items: center;
     margin: 5px;
     padding: 5px
- }
-
- .submit:hover {
-   background-color: white:
-   color: black;
  }
