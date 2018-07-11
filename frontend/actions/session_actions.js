@@ -27,8 +27,9 @@ export const receiveErrors = (errors) => {
 export const login = (user) => {
   return dispatch => {
     return SessionApiUtil.login(user).then(
-      user => dispatch(receiveCurrentUser(user), err => dispatch(
-        receiveErrors(err.responseJSON)))
+      user => dispatch(receiveCurrentUser(user)), err => {
+        return dispatch(receiveErrors(err.responseJSON));
+      }
     );
   };
 };
