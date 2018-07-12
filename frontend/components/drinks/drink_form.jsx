@@ -3,14 +3,16 @@ import React from 'react';
 class DrinkForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {bottle_name: '', description: '', region_id: ''}
 
-    // this.renderRegions = this.renderRegions.bind(this);
+    this.renderRegions = this.renderRegions.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchRegions();
+  }
 
   handleSubmit() {
     this.props.action(this.state);
@@ -22,7 +24,12 @@ class DrinkForm extends React.Component {
     }
   }
 
-// NOTE: render regions component from render once done
+  renderRegions() {
+    this.props.regions.map(region => {
+      return <option value={region.id}>{region.region}</option>;
+    })
+  }
+
 
   render() {
     return (
@@ -44,6 +51,9 @@ class DrinkForm extends React.Component {
             rows="10"
             cols="60" />
 
+          <select>
+            {renderRegions()}
+          </select>
 
 
           <input className="submit" type="submit" value={this.props.formType} />
