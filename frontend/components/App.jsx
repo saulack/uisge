@@ -11,7 +11,10 @@ const App = () => {
 
     <div>
       <header className="navBar">
-      <h1>Uisge</h1>
+      <span className="logo">
+        <h1 className="header-title">UISGE</h1>
+        <h2 className="subtitle" >TODAYS RAIN</h2>
+      </span>
       <GreetingContainer />
       </header>
 

@@ -29,9 +29,9 @@ class SessionForm extends React.Component {
 
    handleErrors() {
      return(
-       <ul>
+       <ul className="errors">
          {this.props.errors.map((error, i) => (
-           <li className="errors" key={`err_key${i}`}>
+           <li key={`err_key${i}`}>
              {error}
            </li>
          ))}
@@ -42,9 +42,14 @@ class SessionForm extends React.Component {
   render() {
     let emailInput;
     if (this.props.formType === 'Sign Up') {
-      emailInput = <label className="text-box-box"><i class="fa fa-envelope" aria-hidden="true">   |</i>
+      emailInput = <label className="text-box-box">
+        <i className="fa fa-envelope"
+          aria-hidden="true">   | </i>
 
-        <input className="text-box" onChange={this.update('email')} type="text" />
+        <input className="text-box"
+          onChange={this.update('email')}
+          type="text"
+          placeholder=" email" />
       </label>;
     }
 
@@ -54,26 +59,36 @@ class SessionForm extends React.Component {
 
       <form className="log-form" onSubmit={this.handleSubmit}>
         <h1 className="title">UISGE</h1>
-        <h3 className="sub-title">Today's rain</h3>
+        <h3 className="sub-title">TODAYS RAIN</h3>
         {this.handleErrors()}
 
         {emailInput}
 
 
         <label className="text-box-box">
-          <i class="fa fa-user">   |</i>
-          <input className="text-box" onChange={this.update('username')} type="text" value={this.state.username} />
+          <i className="fa fa-user">   | </i>
+          <input className="text-box"
+            onChange={this.update('username')}
+            type="text"
+            value={this.state.username}
+            placeholder=" username" />
         </label>
 
 
         <label className="text-box-box">
-          <i class="fa fa-lock" aria-hidden="true">   |</i>
-          <input className="text-box" onChange={this.update('password')} type="password" value={this.state.password} />
+          <i className="fa fa-lock" aria-hidden="true">   | </i>
+          <input className="text-box"
+            onChange={this.update('password')}
+            type="password" value={this.state.password}
+            placeholder=" password" />
         </label>
 
 
-        <input className="submit" type="submit" value={this.props.formType} />
-        <div className="line">______________________</div>
+        <input className="submit"
+          type="submit"
+          value={this.props.formType} />
+
+        <span className="line">______________________</span>
         {this.props.navLink}
         </form>
     </div>

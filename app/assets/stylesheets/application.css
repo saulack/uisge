@@ -41,11 +41,34 @@
    justify-content: space-between;
    align-items: baseline;
    align-content: center;
-   padding: 10px;
-   background: 	#FFD700;
-   font-family: sans-serif;
+   padding: 0;
+   background: #ffc840;
    color: white;
    font-size: 20px;
+   border-bottom: 1px solid gray;
+ }
+
+ .logo {
+   display: flex;
+   font-family: 'Lalezar', cursive;
+   margin-left: 10px;
+   align-content: flex-start;
+   justify-content: center;
+   flex-direction: column;
+   font-weight: bold;
+ }
+
+ .header-title {
+
+   font-family: 'Lalezar', cursive;
+   font-size: 60px;
+   margin-bottom: 0;
+ }
+
+ .subtitle {
+   margin-left: 20px;
+   font-family: 'Lalezar', cursive;
+   font-size: 15px;
  }
 
  .sign-name-parent {
@@ -61,10 +84,10 @@
  }
 
  .submit {
-
    background: gold;
    border-radius: 5px;
-   padding: 3px 50px;
+   padding: 5px 105px;
+   margin-top: 10px;
    border-radius: 5px;
  }
 
@@ -86,13 +109,15 @@
 
  .line {
    color: lightgrey
-   
+
  }
 
  .errors {
    padding: 1px;
    font-size: 15px;
    font-family: sans-serif;
+   font-weight: bold;
+   border-radius: 5px;
    color: white;
-   background: red;
+   background: #ff6666;
  }
