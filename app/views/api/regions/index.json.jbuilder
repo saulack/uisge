@@ -1,5 +1,5 @@
 @regions.each do |region|
   json.set! region.id do
-    json.extract! :id, :region
+    json.extract! region, :id, :region
   end
 end

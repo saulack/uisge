@@ -3,8 +3,8 @@ import { HashRouter, Route } from 'react-router-dom';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import GreetingContainer from './greeting/greeting_container';
-import { AuthRoute } from '../util/route_util';
-
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import createDrinkContainer from './drinks/create_drink_form_container'
 
 const App = () => {
   return(
@@ -21,7 +21,7 @@ const App = () => {
 
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
-
+        <ProtectedRoute exact path="/posts/drinkadd" component={createDrinkContainer} />
 
 
     </div>

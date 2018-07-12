@@ -38,13 +38,13 @@ export const receiveDrinkErrors = (errors) => {
   };
 };
 
-const fetchRegions = () => {
+export const fetchRegions = () => {
   return dispatch => {
     return DrinkApiUtil.fetchRegions().then( regions => {
-      return {
+      return dispatch({
         type: RECEIVE_REGIONS,
         regions
-      }
+      });
     })
   }
 }

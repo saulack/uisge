@@ -36,7 +36,7 @@ class Api::DrinksController < ApplicationController
   private
 
   def  drink_params
-    params.require(:drink).permit(:drink_name, :description)
+    params.require(:drink).permit(:drink_name, :description, :region_id)
   end
 
 end
