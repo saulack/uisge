@@ -1,8 +1,8 @@
 class Api::DrinksController < ApplicationController
 
   def index
-    @drinks = Drink.all.includes(:region)
-    # render index:
+    @drinks = Drink.all
+    render :index
   end
 
   def create
@@ -20,7 +20,7 @@ class Api::DrinksController < ApplicationController
       render :show
     else
       render json: @drink.errors.full_messages, status: 422
-
+    end
   end
 
   def destroy
