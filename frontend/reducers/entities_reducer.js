@@ -5,6 +5,6 @@ import regionsReducer from  './region_reducer';
 
 export default combineReducers({
   users: usersReducer,
-  drinks: drinksReucer,
+  drinks: drinksReducer,
   regions: regionsReducer
 });

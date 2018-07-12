@@ -8,7 +8,7 @@ export const RECEIVE_REGIONS = 'RECEIVE_REGIONS';
 export const RECEIVE_DRINK_ERRORS = 'RECEIVE_DRINK_ERRORS';
 
 
-export const receiveAllDrinks = () => {
+export const receiveAllDrinks = (drinks) => {
   return {
     type: RECEIVE_ALL_DRINKS,
     drinks
@@ -39,7 +39,7 @@ export const receiveDrinkErrors = (errors) => {
 };
 
 const fetchRegions = () => {
-  return dispath => {
+  return dispatch => {
     return DrinkApiUtil.fetchRegions().then( regions => {
       return {
         type: RECEIVE_REGIONS,
@@ -53,7 +53,7 @@ const fetchRegions = () => {
 export const fetchDrinks = () => {
   return dispatch => {
     return DrinkApiUtil.fetchDrinks().then(drinks => {
-      return dispatch(receiveAllDrinks()), err => {
+      return dispatch(receiveAllDrinks(drinks)), err => {
         return dispatch(receiveDrinkErrors(err.responseJSON));
       }
     });
@@ -61,7 +61,7 @@ export const fetchDrinks = () => {
 };
 
 export const fetchDrink = (id) => {
-  return dipatch => {
+  return dispatch => {
     return DrinkApiUtil.fetchDrink(id).then( drink => {
       return dispatch(receiveDrink(drink)), err => {
         return dispatch(receiveDrinkErrors(err.responseJSON));
