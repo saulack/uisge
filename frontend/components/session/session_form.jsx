@@ -56,7 +56,7 @@ class SessionForm extends React.Component {
 
     return (
       <div className="session-log">
-
+        <span className ="form-parent">
       <form className="log-form" onSubmit={this.handleSubmit}>
         <h1 className="title">UISGE</h1>
         <h3 className="sub-title">TODAYS RAIN</h3>
@@ -91,6 +91,7 @@ class SessionForm extends React.Component {
         <span className="line">______________________</span>
         {this.props.navLink}
         </form>
+      </span>
     </div>
     )
   }

@@ -38,7 +38,7 @@
 
  .navBar {
    display: flex;
-   justify-content: space-between;
+   justify-content: space-AROUND;
    align-items: baseline;
    align-content: center;
    padding: 0;
@@ -52,14 +52,12 @@
    display: flex;
    font-family: 'Lalezar', cursive;
    margin-left: 10px;
-   align-content: flex-start;
    justify-content: center;
    flex-direction: column;
    font-weight: bold;
  }
 
  .header-title {
-
    font-family: 'Lalezar', cursive;
    font-size: 60px;
    margin-bottom: 0;
@@ -78,13 +76,14 @@
 
  .sign-user {
     font-family: sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     margin: 5px;
     padding: 20px
  }
 
  .submit {
-   background: gold;
+   color: white;
+   background: #ffc840;
    border-radius: 5px;
    padding: 5px 105px;
    margin-top: 10px;
