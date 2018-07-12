@@ -51,8 +51,8 @@
  .logo {
    display: flex;
    font-family: 'Lalezar', cursive;
-   margin-left: 10px;
    justify-content: center;
+   align-items: center;
    flex-direction: column;
    font-weight: bold;
  }
@@ -64,7 +64,7 @@
  }
 
  .subtitle {
-   margin-left: 20px;
+   flex-flow: wrap;
    font-family: 'Lalezar', cursive;
    font-size: 15px;
  }
