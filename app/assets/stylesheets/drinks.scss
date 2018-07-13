@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-content: space-between;
+  background: lightgrey;
 }
 
 .drink-form {
@@ -20,12 +21,39 @@
   width: 600px;
   height: 600px;
   margin: 10%;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
 }
 
+.bottle-edit-labels {
+  align-self: flex-start;
+  margin-left: 90px;
+  font-weight: bold;
 
+
+}
+
+.drop-bar {
+  color: grey;
+  width: 200px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  font-family: monospace;
+  align-self: flex-start;
+  margin: 20px;
+  margin-left: 90px;
+  font-weight: lighter;
+  border: 1px solid white;
+
+}
 
 .form-text {
   margin: 15px;
   border: 1px solid lightgrey;
   width: 70%;
+  border-radius: 3px;
+  padding: 3px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+
 }

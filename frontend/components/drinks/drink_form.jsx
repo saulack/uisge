@@ -12,6 +12,7 @@ class DrinkForm extends React.Component {
 
   componentDidMount() {
     this.props.fetchRegions();
+
   }
 
   handleSubmit() {
@@ -25,35 +26,46 @@ class DrinkForm extends React.Component {
   }
 
   renderRegions() {
+    if (this.props.regions) {
     this.props.regions.map(region => {
-      return <option value={region.id}>{region.region}</option>;
-    })
+      return (<option
+        className="form-text"
+        key={`region-${id}`}
+        value={region.id}>{region.region}</option>
+      )}
+    )}
   }
 
 
   render() {
     return (
+
       <div className="drink-form-parent">
         <form className="drink-form" onSubmit={this.handleSubmit}>
-          <label> Bottle </label>
+
+          <label className="bottle-edit-labels" >Region</label>
+          <select className="drop-bar" placeholder="Select a region">
+            {this.renderRegions()}
+            <option value="" >Select a region</option>
+        </select>
+
+          <label className="bottle-edit-labels"> Bottle </label>
           <input
             className="form-text"
             onChange={this.handleChange('bottle_name')}
             type="text"
             value={this.state.value}
-            placeholder="Bottle Name.." />
+            placeholder=" Bottle Name.." />
 
 
-        <label> Description </label>
+
+        <label className="bottle-edit-labels"> Description </label>
           <textarea className="form-text"
             onChange={this.handleChange('description')}
-            value={this.state.description} placeholder="Describe this bottle..."
+            value={this.state.description} placeholder=" Describe this bottle..."
             rows="10"
             cols="60" />
 
-          <select>
-            {renderRegions()}
-          </select>
 
 
           <input className="submit" type="submit" value={this.props.formType} />

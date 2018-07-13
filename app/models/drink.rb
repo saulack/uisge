@@ -23,5 +23,6 @@ class Drink < ApplicationRecord
   foreign_key: :region_id,
   class_name: :Region
 
+  has_one_attached :photo
 
 end
