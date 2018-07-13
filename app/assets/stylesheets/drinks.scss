@@ -65,3 +65,29 @@
   padding: 5px;
   border: 1px solid lightgrey;
 }
+
+.drink-index-parent {
+  display: flex;
+
+}
+
+
+.drink-index {
+  display: flex;
+  align-items: flex-end;
+  margin: 10%;
+  flex-direction: column;
+}
+
+.drink-list {
+  border: 1px solid lightgrey;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  width: 15%;
+  height: 15%;
+}
+
+.drink-item {
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
+
+}

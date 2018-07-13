@@ -2,16 +2,16 @@ import { connect } from 'react-redux';
 import { fetchDrinks, deleteDrink } from '../../actions/drink_actions';
 import DrinkIndex from './drinks_index';
 
-const mapStateToProps = (state,  ownProps) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    drinks: state.drinks
+    drinks: Object.values(state.entities.drinks)
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     fetchDrinks: () => dispatch(fetchDrinks()),
-    deleteDrink: (id) => dispatch(deleteDrink),
+    deleteDrink: (id) => dispatch(deleteDrink()),
   };
 };
 
