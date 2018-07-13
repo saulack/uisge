@@ -31,12 +31,12 @@ class DrinkForm extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append('drink[bottle_name]', this.state.bottle_name);
+    formData.append('drink[description]', this.state.description)
+    formData.append('dring[region_id]', this.state.region_id)
     if (this.state.photoFile) {
-
       formData.append('drink[photo]', this.state.photoFile);
     }
     this.props.action(this.state)
-
   }
 
 
@@ -87,7 +87,8 @@ class DrinkForm extends React.Component {
 
 
           <label className="bottle-edit-labels" >Region</label>
-          <select className="drop-bar" placeholder="Select a region">
+          <select className="drop-bar"
+            placeholder="Select a region">
             <option value="" >Select a region...</option>
             {this.renderRegions()}
         </select>
@@ -97,7 +98,7 @@ class DrinkForm extends React.Component {
             className="form-text"
             onChange={this.handleChange('bottle_name')}
             type="text"
-            value={this.state.value}
+            value={this.state.bottleName}
             placeholder=" Bottle Name.." />
 
 
