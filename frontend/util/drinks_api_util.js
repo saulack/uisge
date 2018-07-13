@@ -24,7 +24,9 @@ export const createDrink = drink => {
   return $.ajax({
     method: 'POST',
     url: 'api/drinks/',
-    data: { drink }
+    data: { drink },
+    contentType: false,
+    processData: false
   });
 };
 

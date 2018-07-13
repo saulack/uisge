@@ -4,9 +4,9 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import GreetingContainer from './greeting/greeting_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import createDrinkContainer from './drinks/create_drink_form_container'
-import editDrinkContainer from './drinks/edit_form_container'
-
+import createDrinkContainer from './drinks/create_drink_form_container';
+import editDrinkContainer from './drinks/edit_form_container';
+import DrinksIndex from './drinks/drinks_index_container';
 const App = () => {
   return(
 
@@ -24,7 +24,7 @@ const App = () => {
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute exact path="/posts/drinkadd" component={createDrinkContainer} />
         <ProtectedRoute exact path="/posts/drinkedit" component={editDrinkContainer} />
-
+        <ProtectedRoute exact path="/posts" component={DrinksIndex} />
 
     </div>
   );

@@ -7,6 +7,7 @@ class Api::DrinksController < ApplicationController
 
   def create
     @drink = Drink.new(drink_params)
+    @drink.user_id = current_user.id
     if @drink.save
       render :show
     else
@@ -14,9 +15,9 @@ class Api::DrinksController < ApplicationController
     end
   end
 
-  def upadte
+  def update
     @drink = Drink.find(params[:id])
-    if @drink.update(drink_params)
+    if @drink.user_id == current_user.id && @drink.update(drink_params)
       render :show
     else
       render json: @drink.errors.full_messages, status: 422

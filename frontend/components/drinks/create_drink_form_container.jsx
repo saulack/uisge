@@ -6,8 +6,9 @@ import { createDrink, fetchRegions } from '../../actions/drink_actions';
 
 const mapStateToProps = state => {
   return  {
-    errors: Object.values(state.errors),
-    formType: 'Create Bottle'
+    errors: state.errors.drinks,
+    formType: 'Create Bottle',
+    regions: Object.values(state.entities.regions)
   };
 };
 
