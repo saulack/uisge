@@ -32,6 +32,7 @@ class Api::DrinksController < ApplicationController
 
   def show
     @drink = Drink.find(params[:id])
+    render :show
   end
 
   private

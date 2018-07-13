@@ -9,7 +9,7 @@ class DrinkIndexItem extends React.Component {
         <li>
           <h3 className="bottle-title">{this.props.drink.bottleName}</h3>
           <p className="description">{this.props.drink.description}</p>
-          <Link to={`/drinkedit`}>Edit</Link>
+          <Link to={`/drinkedit/${this.props.drink.id}`}>Edit</Link>
       </li>
       </div>
     )
