@@ -13,7 +13,6 @@ export const fetchDrink = id => {
 };
 
 export const updateDrink = drink => {
-  debugger
   return $.ajax({
     method: 'PATCH',
     url: `api/drinks/${drink.id}`,

@@ -16,7 +16,8 @@ class Api::DrinksController < ApplicationController
   end
 
   def update
-    @drink = Drink.find(params[:id])
+    debugger
+    @drink = Drink.find_by(params[:drinkId])
     if @drink.user_id == current_user.id && @drink.update(drink_params)
       render :show
     else

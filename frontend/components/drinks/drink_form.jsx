@@ -24,7 +24,7 @@ class DrinkForm extends React.Component {
 
   handleChange(form) {
     return (e) => {
-    this.setState({[form]: e.target.value})
+    this.setState({[form]: e.target.value })
     }
   }
 

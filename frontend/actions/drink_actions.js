@@ -74,7 +74,7 @@ export const fetchDrink = (id) => {
 
 export const updateDrink = (drink) => {
   return dispatch => {
-    return DrinkApiUtil.updateDrink().then( drink => {
+    return DrinkApiUtil.updateDrink(drink).then( drink => {
       return dispatch(receiveDrink(drink)), err => {
         return dispatch(receiveDrinkErrors(err.responseJSON));
       }
