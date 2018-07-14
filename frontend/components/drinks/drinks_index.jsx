@@ -1,5 +1,6 @@
 import React from 'react';
 import DrinkIndexItem from './drink_index_item';
+import { Link } from 'react-router-dom';
 
 class DrinksIndex extends React.Component {
   componentDidMount() {
@@ -19,9 +20,11 @@ class DrinksIndex extends React.Component {
      })
     return (
       <div className="drink-index">
+        <span className="create-drink"><Link to={'/drinkadd'}>Add Drink</Link></span>
         <ul className="drink-list">
           {drink}
         </ul>
+
       </div>
     )
   }

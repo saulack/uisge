@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class DrinkForm extends React.Component {
   constructor(props) {
@@ -22,9 +23,9 @@ class DrinkForm extends React.Component {
 
 
 
-  handleChange(form) {
+  handleChange(field) {
     return (e) => {
-    this.setState({[form]: e.target.value })
+    this.setState({[field]: e.target.value })
     }
   }
 
@@ -37,7 +38,7 @@ class DrinkForm extends React.Component {
     if (this.state.photoFile) {
       formData.append('drink[photo]', this.state.photoFile);
     }
-    this.props.action(formData)
+    this.props.action(formData).then(() => this.props.history.push('/posts'));
   }
 
 
@@ -91,13 +92,13 @@ class DrinkForm extends React.Component {
           <select onChange={this.handleChange('region_id')}
             className="drop-bar">
             {this.renderRegions()}
-        </select>
+          </select>
 
           <label className="bottle-edit-labels"> Bottle </label>
           <input
             className="form-text"
-            onChange={this.handleChange('bottle_name')}
             type="text"
+            onChange={this.handleChange('bottle_name')}
             value={this.state.bottleName}
             placeholder=" Bottle Name.." />
 
@@ -106,7 +107,8 @@ class DrinkForm extends React.Component {
         <label className="bottle-edit-labels"> Description </label>
           <textarea className="form-text"
             onChange={this.handleChange('description')}
-            value={this.state.description} placeholder=" Describe this bottle..."
+            value={this.state.description}
+            placeholder=" Describe this bottle..."
             rows="10"
             cols="60" />
 
@@ -115,9 +117,8 @@ class DrinkForm extends React.Component {
             onChange={this.handleFile}
             type="file"/>{preview}
 
+            <input className="submit" type="submit" value={this.props.formType} />
 
-
-          <input className="submit" type="submit" value={this.props.formType} />
         </form>
       </div>
     )

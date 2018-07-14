@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import DrinkForm from './drink_form';
 import { updateDrink, fetchRegions, fetchDrink } from '../../actions/drink_actions';
+import { withRouter } from 'react-router-dom'; 
 
 class EditDrinkForm extends React.Component {
   componentDidMount() {
@@ -38,4 +39,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditDrinkForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EditDrinkForm));

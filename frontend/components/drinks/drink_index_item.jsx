@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 class DrinkIndexItem extends React.Component {
 
@@ -9,9 +9,8 @@ class DrinkIndexItem extends React.Component {
         <li>
           <img className="p-i-i-photo" src={this.props.drink.photoUrl} />
           <h3 className="bottle-title">{this.props.drink.bottleName}</h3>
-          <p className="bottle-description">{this.props.drink.description}</p>
           <Link to={`/drinkedit/${this.props.drink.id}`}>Edit</Link>
-      </li>
+        </li>
       </div>
     )
   }

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import DrinkForm from './drink_form'
 import { createDrink, fetchRegions } from '../../actions/drink_actions';
+import { withRouter } from 'react-router-dom';
 
 
 
@@ -21,4 +22,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(DrinkForm)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DrinkForm));
