@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route } from 'react-router-dom';
+import { HashRouter, Route, Link } from 'react-router-dom';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import GreetingContainer from './greeting/greeting_container';
@@ -15,7 +15,7 @@ const App = () => {
     <div>
       <header className="navBar">
       <span className="logo">
-        <h1 className="header-title">UISGE</h1>
+        <h1 className="header-title"><Link to={'/posts'}>UISGE</Link></h1>
         <h2 className="subtitle" >TODAYS RAIN</h2>
         </span>
           <GreetingContainer />

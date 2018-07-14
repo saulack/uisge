@@ -19,7 +19,7 @@ class Greeting extends React.Component {
       return(
 
          <div className="sign-name-parent">
-           <h2 className="sign-user">{this.props.currentUser.username}</h2>
+           <h2 className="sign-user user-img-nav">{this.props.currentUser.username}</h2>
            <button className="sign-user" onClick={this.handleSubmit}>Logout</button>
          </div>
      );

@@ -2,6 +2,7 @@ import React from 'react';
 import DrinkIndexItem from './drink_index_item';
 import { Link } from 'react-router-dom';
 
+
 class DrinksIndex extends React.Component {
   componentDidMount() {
     this.props.fetchDrinks();
