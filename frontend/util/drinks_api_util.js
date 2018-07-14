@@ -13,18 +13,21 @@ export const fetchDrink = id => {
 };
 
 export const updateDrink = drink => {
+  debugger
   return $.ajax({
     method: 'PATCH',
     url: `api/drinks/${drink.id}`,
-    data: { drink }
+    data: drink,
+    contentType: false,
+    processData: false
   });
 };
 
-export const createDrink = formData => {
+export const createDrink = drink => {
   return $.ajax({
     method: 'POST',
     url: 'api/drinks/',
-    data: { formData },
+    data: drink,
     contentType: false,
     processData: false
   });

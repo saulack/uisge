@@ -3,7 +3,7 @@ import React from 'react';
 class DrinkForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {bottle_name: '',
+    this.state = this.props.drink || {bottle_name: '',
       description: '',
       region_id: '',
       photoFile: null,
@@ -32,12 +32,11 @@ class DrinkForm extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append('drink[bottle_name]', this.state.bottle_name);
-    formData.append('drink[description]', this.state.description)
-    formData.append('drink[region_id]', this.state.region_id)
+    formData.append('drink[description]', this.state.description);
+    formData.append('drink[region_id]', this.state.region_id);
     if (this.state.photoFile) {
       formData.append('drink[photo]', this.state.photoFile);
     }
-    debugger
     this.props.action(formData)
   }
 

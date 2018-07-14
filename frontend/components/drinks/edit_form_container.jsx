@@ -5,7 +5,6 @@ import { updateDrink, fetchRegions, fetchDrink } from '../../actions/drink_actio
 
 class EditDrinkForm extends React.Component {
   componentDidMount() {
-    debugger
     this.props.fetchDrink(this.props.match.params.drinkId);
   }
 

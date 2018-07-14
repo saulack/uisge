@@ -6,7 +6,6 @@ class Api::DrinksController < ApplicationController
   end
 
   def create
-    debugger
     @drink = Drink.new(drink_params)
     @drink.user_id = current_user.id
     if @drink.save
@@ -39,7 +38,7 @@ class Api::DrinksController < ApplicationController
   private
 
   def  drink_params
-    params.require(:drink).permit(:drink_name, :description, :region_id, :photo)
+    params.require(:drink).permit(:bottle_name, :description, :region_id, :photo)
   end
 
 end
