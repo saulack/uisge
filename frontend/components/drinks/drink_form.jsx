@@ -13,6 +13,7 @@ class DrinkForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.handleErrors = this.handleErrors.bind(this)
   }
 
   componentDidMount() {
@@ -32,11 +33,12 @@ class DrinkForm extends React.Component {
     const formData = new FormData();
     formData.append('drink[bottle_name]', this.state.bottle_name);
     formData.append('drink[description]', this.state.description)
-    formData.append('dring[region_id]', this.state.region_id)
+    formData.append('drink[region_id]', this.state.region_id)
     if (this.state.photoFile) {
       formData.append('drink[photo]', this.state.photoFile);
     }
-    this.props.action(this.state)
+    debugger
+    this.props.action(formData)
   }
 
 
@@ -59,7 +61,7 @@ class DrinkForm extends React.Component {
       return (<option
         className="form-text"
         key={`region-${region.id}`}
-        value={region.id}>{region.region}</option>
+        value={region.id} >{region.region}</option>
       )}
     )}
   }
@@ -68,7 +70,7 @@ class DrinkForm extends React.Component {
     return(
       <ul className="errors">
         {this.props.errors.map((error, i) => (
-          <li key={`err_key${i}`}>
+          <li key={`dr-err_key${i}`} >
             {error}
           </li>
         ))}
@@ -87,9 +89,8 @@ class DrinkForm extends React.Component {
 
 
           <label className="bottle-edit-labels" >Region</label>
-          <select className="drop-bar"
-            placeholder="Select a region">
-            <option value="" >Select a region...</option>
+          <select onChange={this.handleChange('region_id')}
+            className="drop-bar">
             {this.renderRegions()}
         </select>
 

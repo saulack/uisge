@@ -20,11 +20,11 @@ export const updateDrink = drink => {
   });
 };
 
-export const createDrink = drink => {
+export const createDrink = formData => {
   return $.ajax({
     method: 'POST',
     url: 'api/drinks/',
-    data: { drink },
+    data: { formData },
     contentType: false,
     processData: false
   });

@@ -6,6 +6,7 @@ class Api::DrinksController < ApplicationController
   end
 
   def create
+    debugger
     @drink = Drink.new(drink_params)
     @drink.user_id = current_user.id
     if @drink.save

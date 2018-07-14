@@ -7,8 +7,9 @@ class DrinkIndexItem extends React.Component {
     return(
       <div className="drink-item">
         <li>
+          <img className="p-i-i-photo" src={this.props.drink.photoUrl} />
           <h3 className="bottle-title">{this.props.drink.bottleName}</h3>
-          <p className="description">{this.props.drink.description}</p>
+          <p className="bottle-description">{this.props.drink.description}</p>
           <Link to={`/drinkedit/${this.props.drink.id}`}>Edit</Link>
       </li>
       </div>

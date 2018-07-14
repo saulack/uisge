@@ -82,9 +82,9 @@ export const updateDrink = (drink) => {
   };
 };
 
-export const createDrink = (drink) => {
+export const createDrink = (formData) => {
   return dispatch => {
-    return DrinkApiUtil.createDrink(drink).then( drink => {
+    return DrinkApiUtil.createDrink(formData).then( drink => {
       return dispatch(receiveDrink(drink)), err => {
         return dispatch(receiveDrinkErrors(err.resonseJSON));
       }
