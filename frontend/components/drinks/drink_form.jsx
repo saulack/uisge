@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 class DrinkForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.drink || {bottle_name: '',
+    this.state = this.props.drink || {
+      bottle_name: '',
       description: '',
       region_id: '',
       photoFile: null,
@@ -26,6 +27,7 @@ class DrinkForm extends React.Component {
   handleChange(field) {
     return (e) => {
     this.setState({[field]: e.target.value })
+    debugger
     }
   }
 
@@ -99,7 +101,7 @@ class DrinkForm extends React.Component {
             className="form-text"
             type="text"
             onChange={this.handleChange('bottle_name')}
-            value={this.state.bottleName}
+            value={this.state.bottle_name}
             placeholder=" Bottle Name.." />
 
 

@@ -13,6 +13,7 @@
 
 class Drink < ApplicationRecord
   validates :bottle_name, :description, presence: true
+  validate :ensure_photo
 
 
   belongs_to :user,
@@ -23,8 +24,9 @@ class Drink < ApplicationRecord
   foreign_key: :region_id,
   class_name: :Region
 
+  has_many :posts
 
-  validate :ensure_photo
+
 
   has_one_attached :photo
 

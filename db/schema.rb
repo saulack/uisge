@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_13_023723) do
+ActiveRecord::Schema.define(version: 2018_07_15_153949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 2018_07_13_023723) do
     t.datetime "updated_at", null: false
     t.integer "region_id"
     t.index ["bottle_name"], name: "index_drinks_on_bottle_name", unique: true
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "rating", null: false
+    t.integer "author_id", null: false
+    t.string "drink_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "regions", force: :cascade do |t|
