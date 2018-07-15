@@ -2,7 +2,7 @@ import { RECEIVE_DRINK_ERRORS,
   RECEIVE_DRINK,
   RECEIVE_ALL_DRINKS, } from '../actions/session_actions';
 
-const sessionErrorsReducer = (state = [], action) => {
+const drinkErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_DRINK_ERRORS:
@@ -15,4 +15,4 @@ const sessionErrorsReducer = (state = [], action) => {
       return state;
   }
 };
-export default sessionErrorsReducer;
+export default drinkErrorsReducer;
