@@ -18,10 +18,9 @@ class PostIndex extends React.Component {
 
     return (
       <div>
-        <ul>
+        <ul className="test">
           {post}
         </ul>
-        <DrinksIndexContainer />
       </div>
 
     )

@@ -9,7 +9,7 @@ import editDrinkContainer from './drinks/edit_form_container';
 import DrinksIndexContainer from './drinks/drinks_index_container';
 import DrinkShowContainer from './drinks/drink_show_container';
 import PostIndexContainer from './posts/post_index_container';
-
+import CreatePostFormContainer from './posts/create_post_form_container';
 
 const App = () => {
   return(
@@ -29,8 +29,9 @@ const App = () => {
         <ProtectedRoute exact path="/drinkadd" component={createDrinkContainer} />
         <ProtectedRoute exact path="/drinkedit/:drinkId" component={editDrinkContainer} />
         <ProtectedRoute exact path="/posts" component={PostIndexContainer} />
-        <ProtectedRoute exact path="/posts/:drinkId" component={DrinkShowContainer} />
-
+        <ProtectedRoute exact path="/posts" component={DrinksIndexContainer} />
+        <ProtectedRoute exact path="/posts/drink/:drinkId" component={DrinkShowContainer} />
+        <ProtectedRoute exact path={"/posts/postadd"} component={CreatePostFormContainer} />
     </div>
   );
 }

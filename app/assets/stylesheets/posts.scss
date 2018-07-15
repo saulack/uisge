@@ -1,7 +1,62 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.test  {
-  font-size: 500px;
-  z-index: 0;
+
+.post-form-parent {
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.post-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5%;
+  border: 1px solid lightgrey;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0,0.1);
+  border-radius: 2px;
+}
+
+.post-body {
+  border-radius: 2px;
+  border: 1px solid lightgrey;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0,0.1)
+}
+
+.slider {
+  -webkit-appearance: none;
+    width: 100%;
+    padding: 5px;
+    margin: 50px;
+    height: 1px;
+    background: black;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 50px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0,0.1)
+
+}
+
+.post-form-pic {
+  width: 100%;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: gold;
+    cursor: pointer;
+    border-radius: 50%;
 }
