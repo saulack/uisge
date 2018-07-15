@@ -19,4 +19,4 @@ const postsReducer = (state = {}, action) => {
   }
 }
 
-export default postReducer;
+export default postsReducer;
