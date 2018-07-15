@@ -1,5 +1,6 @@
 import React from 'react';
 import PostIndexItem from './post_index_item';
+import DrinksIndexContainer from '../drinks/drinks_index_container'
 
 class PostIndex extends React.Component {
   componentDidMount() {
@@ -17,7 +18,10 @@ class PostIndex extends React.Component {
 
     return (
       <div>
-        {post}
+        <ul>
+          {post}
+        </ul>
+        <DrinksIndexContainer />
       </div>
 
     )

@@ -9,7 +9,10 @@ class PostIndexItem extends React.Component {
   render(){
     return (
       <div>
-        <h1>{this.props.}</h1>
+        <li>
+          <h1 className="test" >HELLO</h1>
+        </li>
+
       </div>
     )
   }

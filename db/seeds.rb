@@ -27,3 +27,23 @@ Drink.destroy_all
 lagavulin = Drink.create!(bottle_name: 'Lagavulin', region_id: islay.id, user_id: user1.id, description: 'the yummiest')
 d_black = Drink.create!(bottle_name: 'Johny Walker Double Black', region_id: blend.id, user_id: user2.id, description: 'suprisingly good for a johnny wlaker')
 uisge_va = Drink.create!(bottle_name: 'Uisge-va', region_id: blend.id, user_id: user3.id, description: 'best blend out there')
+
+
+Post.destroy_all
+post1 = Post.create!(body: "wow im so posty", rating: 4, author_id: 1, drink_id: 1)
+post2 = Post.create!(body: "im another post but im not as posty as the other one", rating: 4, author_id: 1, drink_id: 1)
+
+
+
+
+# == Schema Information
+#
+# Table name: posts
+#
+#  id         :bigint(8)        not null, primary key
+#  body       :text             not null
+#  rating     :integer          not null
+#  author_id  :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  drink_id   :integer          not null

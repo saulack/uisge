@@ -8,6 +8,7 @@ import createDrinkContainer from './drinks/create_drink_form_container';
 import editDrinkContainer from './drinks/edit_form_container';
 import DrinksIndexContainer from './drinks/drinks_index_container';
 import DrinkShowContainer from './drinks/drink_show_container';
+import PostIndexContainer from './posts/post_index_container';
 
 
 const App = () => {
@@ -27,7 +28,7 @@ const App = () => {
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute exact path="/drinkadd" component={createDrinkContainer} />
         <ProtectedRoute exact path="/drinkedit/:drinkId" component={editDrinkContainer} />
-        <ProtectedRoute exact path="/posts" component={DrinksIndexContainer} />
+        <ProtectedRoute exact path="/posts" component={PostIndexContainer} />
         <ProtectedRoute exact path="/posts/:drinkId" component={DrinkShowContainer} />
 
     </div>
