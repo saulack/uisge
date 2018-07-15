@@ -9,6 +9,7 @@ class DrinksIndex extends React.Component {
   }
 
 
+
   render() {
     const drink = this.props.drinks.map( drink => {
       return (

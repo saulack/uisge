@@ -7,6 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import createDrinkContainer from './drinks/create_drink_form_container';
 import editDrinkContainer from './drinks/edit_form_container';
 import DrinksIndexContainer from './drinks/drinks_index_container';
+import DrinkShowContainer from './drinks/drink_show_container';
 
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
         <ProtectedRoute exact path="/drinkadd" component={createDrinkContainer} />
         <ProtectedRoute exact path="/drinkedit/:drinkId" component={editDrinkContainer} />
         <ProtectedRoute exact path="/posts" component={DrinksIndexContainer} />
+        <ProtectedRoute exact path="/posts/:drinkId" component={DrinkShowContainer} />
 
     </div>
   );
