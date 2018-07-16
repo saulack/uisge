@@ -14,7 +14,6 @@ class PostForm extends React.Component {
   }
 
   componentDidMount(){
-
   }
 
   handleChange(field) {
@@ -23,20 +22,40 @@ class PostForm extends React.Component {
     }
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('post[body]', this.state.bottle_name);
+    formData.append('post[rating]', this.state.description);
+    if (this.state.photoFile) {
+      formData.append('post[photo]', this.state.photoFile);
+    }
+    this.props.action(formData).then(() => this.props.history.push('/posts'));
+  }
+
+
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+
+      this.setState({photoFile: file, photoUrl: fileReader.result});
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
 
   }
 
 
   render() {
 const preview = this.state.photoUrl ? <img
-                className="label-preview"
-                src={this.state.photoUrl} /> : null;
+    className="label-preview"
+    src={this.state.photoUrl} /> : null;
 
     return (
       <div className="post-form-parent">
         <form className="post-form" onSubmit={this.handleSubmit}>
-
 
           <textarea className="post-body"
             rows="10"

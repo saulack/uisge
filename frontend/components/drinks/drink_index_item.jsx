@@ -4,20 +4,20 @@ import PostForm from '../posts/post_form';
 
 class DrinkIndexItem extends React.Component {
 
-
-
   render() {
     return(
       <div className="drink-item">
-        <li>
+          <li className="dp-image-title-parent">
           <img className="p-i-i-photo" src={this.props.drink.photoUrl} />
           <h3 className="bottle-title">{this.props.drink.bottle_name}</h3>
-          <Link to={`/drinkedit/${this.props.drink.id}`}>Edit</Link>
-          <Link to={`/posts/${this.props.drink.id}`}>More</Link>
-          <Link to={`posts/postadd`}>Chcek in</Link>
-
-      </li>
-
+          <div className="dp-link-parent">
+            <Link className='drink-panel-links' to={`/posts/${this.props.drink.id}`}><i class="fas fa-info-circle"></i>
+            </Link>
+            <Link className='drink-panel-links' to={`/drinkedit/${this.props.drink.id}`}><i class="far fa-edit"></i></Link>
+            <Link className='drink-panel-links' drink={this.props.drink} to={`posts/postadd`}><i class="fas fa-plus"></i>
+            </Link>
+          </div>
+        </li>
       </div>
     )
   }

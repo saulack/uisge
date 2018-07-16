@@ -5,7 +5,7 @@ export const RECEIVE_ALL_DRINKS = 'RECEIVE_ALL_DRINKS';
 export const RECEIVE_DRINK = 'RECEIVE_DRINK';
 export const REMOVE_DRINK = 'REMOVE_DRINK';
 export const RECEIVE_REGIONS = 'RECEIVE_REGIONS';
-export const RECEIVE_DRINK_ERRORS = 'RECEIVE_DRINK_ERRORS';
+export const RECEIVE_ERRORS = 'RECEIVE_DRINK_ERRORS';
 
 
 export const receiveAllDrinks = (drinks) => {
@@ -33,7 +33,7 @@ export const removeDrink = (drink) => {
 
 export const receiveDrinkErrors = (errors) => {
   return {
-    type: RECEIVE_DRINK_ERRORS,
+    type: RECEIVE_ERRORS,
     errors
   };
 };

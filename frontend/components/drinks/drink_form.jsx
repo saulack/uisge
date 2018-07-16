@@ -53,7 +53,6 @@ class DrinkForm extends React.Component {
     if (file) {
       fileReader.readAsDataURL(file);
     }
-
   }
 
   renderRegions() {
@@ -62,7 +61,7 @@ class DrinkForm extends React.Component {
       return (<option
         className="form-text"
         key={`region-${region.id}`}
-        value={region.id} >{region.region}</option>
+        value={region.id}>{region.region}</option>
       )}
     )}
   }
