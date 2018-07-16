@@ -17,6 +17,7 @@ class PostIndexItem extends React.Component {
       const userId = this.props.post.user_id
       const redionId = this.props.drinks[drinkId].region_id
 
+      debugger
     return (
       <div>
         <li className="single-post">
@@ -26,6 +27,7 @@ class PostIndexItem extends React.Component {
             <p className="username">&nbsp;{this.props.drinks[drinkId].bottle_name}</p>
           </div>
           <p className="post-content">{this.props.post.body}</p>
+          <p>{this.props.post.rating}</p>
 
           <div className="post-panel-link-parent">
             <Link className="post-panel-link" to={'/posts/postedit'}>

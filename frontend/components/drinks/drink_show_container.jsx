@@ -9,6 +9,7 @@ class DrinkShow extends React.Component {
 
 
   render() {
+    debugger
     return (
       <div className="single-drink-parent">
         <span className="bottle-name-show" >DRANK</span>

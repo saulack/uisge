@@ -4,7 +4,6 @@ export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const REMOVE_POST = 'REMOVE_POST';
 export const RECEIVE_POST_ERRORS =  'RECEIVE_POST_ERRORS';
-export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 
 export const receiveAllPosts = ({posts, users, drinks}) => {
   return {
