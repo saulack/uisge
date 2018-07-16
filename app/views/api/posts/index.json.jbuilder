@@ -1,7 +1,7 @@
 @posts.each do |post|
-json.set! posts.id do
+json.set! post.id do
   json.extract! post, :id, :body, :drink_id, :author_id
-  json.photoUrl url_for(drink.photo)
+  # json.photoUrl url_for(drink.photo)
   end
 end
 

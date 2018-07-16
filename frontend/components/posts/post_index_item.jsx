@@ -1,5 +1,5 @@
 import React from 'react';
-
+// import PostIndex from './post_index'
 
 class PostIndexItem extends React.Component {
   componentDidMount() {
@@ -17,3 +17,5 @@ class PostIndexItem extends React.Component {
     )
   }
 }
+
+export default PostIndexItem;

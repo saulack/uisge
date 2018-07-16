@@ -8,19 +8,21 @@ class PostIndex extends React.Component {
   }
 
   render() {
-    const post = this.props.posts.map( post => {
+    debugger
+    const postItem = this.props.posts.map( post => {
       <PostIndexItem
         key={`post-${post.id}`}
-        post={post}
+        post={postItem}
         deletePosts={deletePost}
-        fetchRegions={fetchRegions} />
+        fetchRegions={fetchRegions} />;
     })
 
     return (
       <div>
         <ul className="test">
-          {post}
+          {postItem}
         </ul>
+        <DrinksIndexContainer />
       </div>
 
     )

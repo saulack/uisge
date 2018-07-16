@@ -5,12 +5,12 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.author_id = current_user.id
-    if @post.save
+    @posts = Post.new(post_params)
+    @posts.author_id = current_user.id
+    if @posts.save
       render :show
     else
-      render json: @post.errors.full_messages
+      render json: @posts.errors.full_messages
     end
   end
 

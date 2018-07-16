@@ -29,7 +29,6 @@ const App = () => {
         <ProtectedRoute exact path="/drinkadd" component={createDrinkContainer} />
         <ProtectedRoute exact path="/drinkedit/:drinkId" component={editDrinkContainer} />
         <ProtectedRoute exact path="/posts" component={PostIndexContainer} />
-        <ProtectedRoute exact path="/posts" component={DrinksIndexContainer} />
         <ProtectedRoute exact path="/posts/drink/:drinkId" component={DrinkShowContainer} />
         <ProtectedRoute exact path={"/posts/postadd"} component={CreatePostFormContainer} />
     </div>
@@ -37,3 +36,5 @@ const App = () => {
 }
 
 export default App;
+
+// <ProtectedRoute exact path="/posts" component={DrinksIndexContainer} />
