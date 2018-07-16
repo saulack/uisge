@@ -1,4 +1,2 @@
-json.extract! @post, :id, :body,
-json.drinkId :drink_Id,
-json.authorId :author_Id
+json.extract! @post, :id, :body, :drink_id, :author_id
 json.photoUrl url_for(drink.photo)

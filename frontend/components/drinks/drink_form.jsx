@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 class DrinkForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.drink || {
+      this.state = this.props.drink || {
       bottle_name: '',
       description: '',
       region_id: '',
       photoFile: null,
       photoUrl: null}
-
     this.renderRegions = this.renderRegions.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -21,7 +20,6 @@ class DrinkForm extends React.Component {
   componentDidMount() {
     this.props.fetchRegions();
   }
-
 
 
   handleChange(field) {
@@ -39,7 +37,9 @@ class DrinkForm extends React.Component {
     if (this.state.photoFile) {
       formData.append('drink[photo]', this.state.photoFile);
     }
-    this.props.action(formData).then(() => this.props.history.push('/posts'));
+    debugger
+    this.props.action(formData, this.state.id)
+    // .then(() => this.props.history.push('/posts')); --edit post form wont send history
   }
 
 

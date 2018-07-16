@@ -17,7 +17,7 @@ class Api::DrinksController < ApplicationController
 
   def update
     @drink = Drink.find_by(params[:drinkId])
-    if @drink.user_id == current_user.id && @drink.update(drink_params)
+    if @drink.update(drink_params)
       render :show
     else
       render json: @drink.errors.full_messages, status: 422

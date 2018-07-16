@@ -4,7 +4,7 @@ json.set! post.id do
   # json.photoUrl url_for(drink.photo)
   end
 end
-
+#
 # json.users do
 #   @posts.each do |post|
 #     json.set! post.author_id do

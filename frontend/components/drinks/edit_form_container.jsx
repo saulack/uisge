@@ -1,13 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import DrinkForm from './drink_form';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { updateDrink, fetchRegions, fetchDrink } from '../../actions/drink_actions';
-import { withRouter } from 'react-router-dom'; 
 
 class EditDrinkForm extends React.Component {
   componentDidMount() {
     this.props.fetchDrink(this.props.match.params.drinkId);
   }
+
+
 
   render() {
     return (
@@ -33,7 +35,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    action: drink => dispatch(updateDrink(drink)),
+    action: (drink, drinkId) => dispatch(updateDrink(drink, drinkId)),
     fetchDrink: id => dispatch(fetchDrink(id)),
     fetchRegions: () => dispatch(fetchRegions())
   };

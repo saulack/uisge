@@ -72,9 +72,9 @@ export const fetchDrink = (id) => {
 
 
 
-export const updateDrink = (drink) => {
+export const updateDrink = (drink, drinkId) => {
   return dispatch => {
-    return DrinkApiUtil.updateDrink(drink).then( drink => {
+    return DrinkApiUtil.updateDrink(drink, drinkId).then( drink => {
       return dispatch(receiveDrink(drink)), err => {
         return dispatch(receiveDrinkErrors(err.responseJSON));
       }

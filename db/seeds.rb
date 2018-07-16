@@ -24,11 +24,11 @@ lowlands = Region.create!(region: 'Lowland')
 blend = Region.create!(region: 'Blend')
 
 Drink.destroy_all
-lagavulin = Drink.create!(bottle_name: 'Lagavulin', region_id: islay.id, user_id: user1.id, description: 'the yummiest')
-d_black = Drink.create!(bottle_name: 'Johny Walker Double Black', region_id: blend.id, user_id: user2.id, description: 'suprisingly good for a johnny wlaker')
-uisge_va = Drink.create!(bottle_name: 'Uisge-va', region_id: blend.id, user_id: user3.id, description: 'best blend out there')
+# lagavulin = Drink.create!(bottle_name: 'Lagavulin', region_id: islay.id, user_id: user1.id, description: 'the yummiest')
+# d_black = Drink.create!(bottle_name: 'Johny Walker Double Black', region_id: blend.id, user_id: user2.id, description: 'suprisingly good for a johnny wlaker')
+# uisge_va = Drink.create!(bottle_name: 'Uisge-va', region_id: blend.id, user_id: user3.id, description: 'best blend out there')
 
 
-Post.destroy_all
-post1 = Post.create!(body: "wow im so posty", rating: 4, author_id: 1, drink_id: 1)
-post2 = Post.create!(body: "im another post but im not as posty as the other one", rating: 4, author_id: 1, drink_id: 1)
+# Post.destroy_all
+# post1 = Post.create!(body: "wow im so posty", rating: 4, author_id: 7, drink_id: 13)
+# post2 = Post.create!(body: "im another post but im not as posty as the other one", rating: 4, author_id: 7, drink_id: 12)

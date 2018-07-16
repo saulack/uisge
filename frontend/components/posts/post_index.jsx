@@ -1,6 +1,6 @@
 import React from 'react';
 import PostIndexItem from './post_index_item';
-import DrinksIndexContainer from '../drinks/drinks_index_container'
+
 
 class PostIndex extends React.Component {
   componentDidMount() {
@@ -8,21 +8,21 @@ class PostIndex extends React.Component {
   }
 
   render() {
-    debugger
     const postItem = this.props.posts.map( post => {
-      <PostIndexItem
+      return <PostIndexItem
         key={`post-${post.id}`}
-        post={postItem}
-        deletePosts={deletePost}
-        fetchRegions={fetchRegions} />;
+        post={post}
+        deletePost={this.props.deletePost}
+        fetchRegions={this.props.fetchRegions}
+        drinks={this.props.drinks} />;
     })
 
     return (
       <div>
-        <ul className="test">
+        <ul>
           {postItem}
         </ul>
-        <DrinksIndexContainer />
+
       </div>
 
     )

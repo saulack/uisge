@@ -12,10 +12,10 @@ export const fetchDrink = id => {
   });
 };
 
-export const updateDrink = drink => {
+export const updateDrink = (drink, drinkId) => {
   return $.ajax({
     method: 'PATCH',
-    url: `api/drinks/${drink.id}`,
+    url: `api/drinks/${drinkId}`,
     data: drink,
     contentType: false,
     processData: false
