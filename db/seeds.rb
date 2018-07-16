@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
+
 User.destroy_all
 
 user1 = User.create!(username: 'saul', password: 'password', email: 'saulack@email.com')
@@ -24,11 +26,39 @@ lowlands = Region.create!(region: 'Lowland')
 blend = Region.create!(region: 'Blend')
 
 Drink.destroy_all
-# lagavulin = Drink.create!(bottle_name: 'Lagavulin', region_id: islay.id, user_id: user1.id, description: 'the yummiest')
-# d_black = Drink.create!(bottle_name: 'Johny Walker Double Black', region_id: blend.id, user_id: user2.id, description: 'suprisingly good for a johnny wlaker')
-# uisge_va = Drink.create!(bottle_name: 'Uisge-va', region_id: blend.id, user_id: user3.id, description: 'best blend out there')
+# lagavulin = Drink.create!(
+#   bottle_name: 'Lagavulin',
+#   region_id: islay.id,
+#   user_id: user1.id,
+#   description: 'the yummiest'
+#   photoFile: File.read('/home/saulack/Pictures/oban.jpg'))
+#
+#
+# d_black = Drink.create!(
+#   bottle_name: 'Johny Walker Double Black',
+#   region_id: blend.id,
+#   user_id: user2.id,
+#   description: 'suprisingly good for a johnny wlaker'
+#   photoFile: File.read('/home/saulack/Pictures/oban.jpg'))
+#
+#
+# uisge_va = Drink.create!(
+#   bottle_name: 'Uisge-va',
+#   region_id: blend.id,
+#   user_id: user3.id,
+#   description: 'best blend out there'
+#   photoFile: File.read('/home/saulack/Pictures/oban.jpg'))
+
 
 
 Post.destroy_all
-post1 = Post.create!(body: "wow im so posty", rating: 4, author_id: user1.id, drink_id: 13)
-post2 = Post.create!(body: "im another post but im not as posty as the other one", rating: 4, author_id: 7, drink_id: 12)
+
+# post1 = Post.create!(
+#   body: "wow im so posty",
+#   rating: 4,
+#   author_id: user1.id,
+#   drink_id: lagavulin.id
+#
+#
+# post2 = Post.create!(body: "im another post but im not as posty as the other one",rating: 4, author_id: 28, drink_id: 3)
+#   i

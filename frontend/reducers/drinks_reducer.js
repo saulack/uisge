@@ -1,3 +1,4 @@
+import { RECEIVE_ALL_POSTS } from '../actions/post_actions';
 import { RECEIVE_DRINK,
   RECEIVE_ALL_DRINKS,
   REMOVE_DRINK, } from '../actions/drink_actions';
@@ -13,6 +14,8 @@ import { RECEIVE_DRINK,
         let newState = merge({}, state);
         delete newState[action.drinkId];
         return newState;
+      case RECEIVE_ALL_POSTS:
+        return merge({}, state, action.drinks)
       default:
         return state;
     };

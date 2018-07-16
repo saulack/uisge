@@ -5,6 +5,7 @@ import PostIndexItem from './post_index_item';
 class PostIndex extends React.Component {
   componentDidMount() {
     this.props.fetchPosts()
+    debugger
   }
 
   render() {
@@ -13,8 +14,9 @@ class PostIndex extends React.Component {
         key={`post-${post.id}`}
         post={post}
         deletePost={this.props.deletePost}
-        fetchRegions={this.props.fetchRegions}
         drinks={this.props.drinks}
+        users={this.props.users}
+        fetchRegions={this.props.fetchRegions}
         fetchDrink={this.props.fetchDrink} />;
     })
 

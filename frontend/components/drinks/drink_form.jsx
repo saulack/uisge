@@ -38,8 +38,7 @@ class DrinkForm extends React.Component {
     if (this.state.photoFile) {
       formData.append('drink[photo]', this.state.photoFile);
     }
-    debugger
-    this.props.action(formData, this.state.id).then(() => this.props.history.push('/posts'));
+      this.props.action(formData, this.state.id).then(() => this.props.history.push('/posts'));
   }
 
 
