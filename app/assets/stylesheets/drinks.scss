@@ -1,6 +1,11 @@
 // Place all the styles related to the drinks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-and-drink-parent {
+}
+
+
 .drink-form-parent {
   display: flex;
   align-items: center;
@@ -20,9 +25,10 @@
   border: 1px solid lightgrey;
   width: 600px;
   height: 700px;
-  margin: 10%;
+  margin: 0;
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
+  z-index: 1;
 }
 
 .bottle-edit-labels {

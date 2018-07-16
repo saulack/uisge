@@ -22,14 +22,17 @@ class DrinksIndex extends React.Component {
       );
      })
     return (
-      <div>
-      <div className="drink-index">
-        <span className="create-drink"><Link to={'/drinkadd'}>Add Drink</Link></span>
+      <div className="post-and-drink-parent">
+        <div className="post-in-drink">
+          <PostIndexContainer drinks={this.props.drinks} />
+        </div>
+
+        <div className="drink-index">
+          <span className="create-drink"><Link to={'/drinkadd'}>Add Drink</Link></span>
         <ul className="drink-list">
           {drink}
         </ul>
       </div>
-        <PostIndexContainer drinks={this.props.drinks} />
       </div>
     )
   }
