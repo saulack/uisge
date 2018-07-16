@@ -14,7 +14,8 @@ class PostIndex extends React.Component {
         post={post}
         deletePost={this.props.deletePost}
         fetchRegions={this.props.fetchRegions}
-        drinks={this.props.drinks} />;
+        drinks={this.props.drinks}
+        fetchDrink={this.props.fetchDrink} />;
     })
 
     return (

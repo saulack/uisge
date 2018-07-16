@@ -29,6 +29,6 @@ Drink.destroy_all
 # uisge_va = Drink.create!(bottle_name: 'Uisge-va', region_id: blend.id, user_id: user3.id, description: 'best blend out there')
 
 
-# Post.destroy_all
-# post1 = Post.create!(body: "wow im so posty", rating: 4, author_id: 7, drink_id: 13)
-# post2 = Post.create!(body: "im another post but im not as posty as the other one", rating: 4, author_id: 7, drink_id: 12)
+Post.destroy_all
+post1 = Post.create!(body: "wow im so posty", rating: 4, author_id: user1.id, drink_id: 13)
+post2 = Post.create!(body: "im another post but im not as posty as the other one", rating: 4, author_id: 7, drink_id: 12)

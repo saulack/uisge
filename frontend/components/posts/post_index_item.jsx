@@ -4,29 +4,23 @@ import { Link } from 'react-router-dom';
 class PostIndexItem extends React.Component {
   constructor(props){
     super(props);
+    this.state = this.props.post
 
-    this.getDrinkVals = this.getDrinkVals.bind(this)
   }
 
-  componentDidMount() {
-    this.props.fetchRegions();
-  }
+  // componentDidMount() {
+  //   this.props.fetchRegions();
+  // }
 
 
-  getDrinkVals() {
-    this.props.drinks.map( drink => {
-      if (this.props.post.drink_id === drink.id)
-      return drink;
-    })
-  }
 
 
   render(){
-    const thisDrink = this.getDrinkVals()
+
     return (
       <div>
         <li className="single-post">
-          <h1>Hello</h1>
+          // <h1>{this.props.drink}</h1>
           <span className="post-content">{this.props.post.body}</span>
 
           <div className="post-panel-link-parent">

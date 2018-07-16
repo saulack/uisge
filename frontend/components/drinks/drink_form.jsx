@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class DrinkForm extends React.Component {
   constructor(props) {
@@ -38,8 +39,7 @@ class DrinkForm extends React.Component {
       formData.append('drink[photo]', this.state.photoFile);
     }
     debugger
-    this.props.action(formData, this.state.id)
-    // .then(() => this.props.history.push('/posts')); --edit post form wont send history
+    this.props.action(formData, this.state.id).then(() => this.props.history.push('/posts'));
   }
 
 
@@ -125,4 +125,4 @@ class DrinkForm extends React.Component {
   }
 }
 
-export default DrinkForm;
+export default withRouter(DrinkForm);
