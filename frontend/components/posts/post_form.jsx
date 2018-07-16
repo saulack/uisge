@@ -4,8 +4,8 @@ class PostForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.post || {body: '',
-      drink_id: 'null',
-      rating: 'null',
+      drink_id: '',
+      rating: 1,
       photoFile: null,
       photoUrl: null };
 
@@ -20,6 +20,10 @@ class PostForm extends React.Component {
     return (e) => {
       this.setState({[field]: e.target.value });
     }
+  }
+
+  handleSlider(e) {
+    this.setState({rating: e.target.value})
   }
 
   handleSubmit(e) {
@@ -57,15 +61,18 @@ const preview = this.state.photoUrl ? <img
       <div className="post-form-parent">
         <form className="post-form" onSubmit={this.handleSubmit}>
 
+          <label className="post-label" >What did you think?</label>
           <textarea className="post-body"
             rows="10"
             cols="60"
+            value={this.state.body}
             onChange={this.handleChange('body')}/>
 
-         <input className="slider"
-             onChange={this.handleChange}
-             type="range" min="1" max="100"
-             value={this.state.rating}/>
+          <label className="post-label">Rate it!</label>
+         <input  className="slider"
+             onChange={this.handleChange()}
+             type="range" min="1" max="10"  />
+
 
            <input  className="form-text post-form-pic"
            onChange={this.handleFile}

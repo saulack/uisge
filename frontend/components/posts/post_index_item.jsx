@@ -11,21 +11,20 @@ class PostIndexItem extends React.Component {
     this.props.fetchRegions()
   }
 
-  getDrink() => {
-    const drinkId = this.props.post.drink_id;
-
-    this.props.drinks.map()
-  }
-
 
   render(){
+      const drinkId = this.props.post.drink_id
+      const userId = this.props.post.user_id
+      const redionId = this.props.drinks[drinkId].region_id
 
-
-    debugger
     return (
       <div>
         <li className="single-post">
-          <span></span>
+          <div className="post-intro">
+            <p class="username" >#username &nbsp;</p>
+            <p>#is drinking</p>
+            <p className="username">&nbsp;{this.props.drinks[drinkId].bottle_name}</p>
+          </div>
           <p className="post-content">{this.props.post.body}</p>
 
           <div className="post-panel-link-parent">

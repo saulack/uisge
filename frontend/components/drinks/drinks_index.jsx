@@ -14,10 +14,10 @@ class DrinksIndex extends React.Component {
   render() {
     const drink = this.props.drinks.map( drink => {
       return (
-        <DrinkIndexItem
+        <DrinkIndexItem drink={drink}
         className="drink-index-parent"
         key={`drink-${drink.id}`}
-        drink={drink}
+
         deleteDrink={this.props.deleteDrink} />
       );
      })

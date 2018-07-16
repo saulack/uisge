@@ -5,10 +5,10 @@ import PostIndexItem from './post_index_item';
 class PostIndex extends React.Component {
   componentDidMount() {
     this.props.fetchPosts()
-    debugger
   }
 
   render() {
+    debugger
     const postItem = this.props.posts.map( post => {
       return <PostIndexItem
         key={`post-${post.id}`}
