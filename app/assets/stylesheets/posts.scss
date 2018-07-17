@@ -3,10 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .post-form-parent {
+  margin: 0;
   margin-top: 100px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 
@@ -20,9 +21,11 @@
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0,0.1);
   border-radius: 2px;
   margin-bottom: 50px;
+  z-index: 1;
 }
 
 .post-body {
+  align-self: space-around;
   border-radius: 2px;
   border: 1px solid lightgrey;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0,0.1)
