@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import PostIndex from './post_index'
 import { fetchPosts, deletePost } from '../../actions/post_actions';
 import { fetchRegions, fetchDrink, fetchDrinks } from '../../actions/drink_actions';
-
+import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = (state) => {
   return {
@@ -22,4 +22,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostIndex));

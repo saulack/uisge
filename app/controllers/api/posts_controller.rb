@@ -5,18 +5,17 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-    @posts = Post.new(post_params)
-    @posts.author_id = current_user.id
-    if @posts.save
+    @post = Post.new(post_params)
+    @post.author_id = current_user.id
+    if @post.save
       render :show
     else
-      render json: @posts.errors.full_messages, status: 422
+      render json: @post.errors.full_messages, status: 422
     end
   end
 
   def show
     @post = Post.find(params[:id])
-    render :show
   end
 
   def update
@@ -30,8 +29,12 @@ class Api::PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    render json: {}
+    if @post.author_id == current_user.id
+      @post.destroy
+      render json: {}
+    else
+      render json: ['you can not delete someone elses post'], status: 422
+    end
   end
 
   private

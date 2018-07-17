@@ -11,6 +11,7 @@ class PostIndex extends React.Component {
     const postItem = this.props.posts.map( post => {
       return <PostIndexItem
         key={`post-${post.id}`}
+        history={this.props.history}
         post={post}
         deletePost={this.props.deletePost}
         drinks={this.props.drinks}

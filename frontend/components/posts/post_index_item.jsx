@@ -5,10 +5,17 @@ class PostIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchRegions()
+  }
+
+  handleDelete(e) {
+    this.props.deletePost(e.target.value).then(
+      this.props.history.push('/posts')
+    );
   }
 
 
@@ -36,6 +43,12 @@ class PostIndexItem extends React.Component {
             <Link className="post-panel-link" to={'/posts/postshow'}>
               <i className="fas fa-info-circle"></i>
             </Link>
+
+            <button className="post-panel-link"
+              value={this.props.post.id}
+              onClick={this.handleDelete}>
+              <i className="far fa-trash-alt"></i>
+            </button>
           </div>
 
         </li>

@@ -25,14 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   store = configureStore(preloadedState);
-
-// NOTE:  WINDOW FUNKS \/ FOR TESTING ONLY
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-// NOTE:  WINDOW FUNKS/\ FOR TESTING ONLY
-
-
-
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });
