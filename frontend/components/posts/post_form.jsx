@@ -4,13 +4,14 @@ class PostForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.post || {body: '',
-      drink_id: '',
+      drink_id: this.props.match.params.drinkId,
       rating: 1,
       photoFile: null,
       photoUrl: null };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
 
@@ -26,6 +27,7 @@ class PostForm extends React.Component {
     const formData = new FormData();
     formData.append('post[body]', this.state.bottle_name);
     formData.append('post[rating]', this.state.description);
+    formData.append('post[drink_id]', this.state.drink_id)
     if (this.state.photoFile) {
       formData.append('post[photo]', this.state.photoFile);
     }
@@ -61,7 +63,7 @@ const preview = this.state.photoUrl ? <img
             rows="10"
             cols="60"
             onChange={this.handleChange('body')}
-            vlue={this.state.value}/>
+            vlue={this.state.body}/>
 
           <label className="post-label">Rate it!</label>
           <h3>{this.state.rating}</h3>

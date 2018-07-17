@@ -8,7 +8,6 @@ class PostIndex extends React.Component {
   }
 
   render() {
-    debugger
     const postItem = this.props.posts.map( post => {
       return <PostIndexItem
         key={`post-${post.id}`}

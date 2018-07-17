@@ -10,12 +10,13 @@ class Api::PostsController < ApplicationController
     if @posts.save
       render :show
     else
-      render json: @posts.errors.full_messages
+      render json: @posts.errors.full_messages, status: 422
     end
   end
 
   def show
     @post = Post.find(params[:id])
+    render :show
   end
 
   def update

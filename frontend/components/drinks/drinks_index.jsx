@@ -24,7 +24,7 @@ class DrinksIndex extends React.Component {
     return (
       <div className="post-and-drink-parent">
         <div className="post-in-drink">
-          <PostIndexContainer drinks={this.props.drinks} />
+          <PostIndexContainer  />
         </div>
 
         <div className="drink-index">

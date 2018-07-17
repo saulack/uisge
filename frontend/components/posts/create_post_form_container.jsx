@@ -6,7 +6,8 @@ import { createPost } from '../../actions/post_actions'
 
 const mapStateToProps = state => {
   return {
-    formType: 'Post'
+    formType: 'Post',
+    errors: state.entities.errors
   };
 };
 
