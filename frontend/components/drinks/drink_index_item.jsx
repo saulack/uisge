@@ -13,7 +13,7 @@ class DrinkIndexItem extends React.Component {
           <div className="dp-link-parent">
             <Link
               className='drink-panel-links'
-              to={`/posts/drinks/${this.props.drink.id}`}><i
+              to={`/posts/drink/${this.props.drink.id}`}><i
               className="fas fa-info-circle"></i>
             </Link>
             <Link className='drink-panel-links'

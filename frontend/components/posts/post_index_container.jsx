@@ -7,7 +7,8 @@ import { fetchRegions, fetchDrink } from '../../actions/drink_actions';
 const mapStateToProps = (state) => {
   return {
     posts: Object.values(state.entities.posts),
-    drinks: state.entities.drinks
+    drinks: state.entities.drinks,
+    users: state.entities.users
   };
 };
 
