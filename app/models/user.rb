@@ -19,10 +19,11 @@ class User < ApplicationRecord
 
 
   attr_reader :password
-
+  before_save :ensure_picture, :ensure_mural
   after_initialize :ensure_session_token
 
-  has_one_attached :photo
+  has_one_attached :picture
+  has_one_attached :mural
 
   has_many :drinks_added,
   foreign_key: :user_id,
@@ -31,6 +32,7 @@ class User < ApplicationRecord
   has_many :posts,
   foreign_key: :author_id,
   class_name: :Post
+
 
 
 
@@ -58,4 +60,15 @@ class User < ApplicationRecord
     self.session_token ||= SecureRandom.base64
   end
 
+  def ensure_picture
+    unless self.picture.attached?
+      self.picture.attach(io: File.open('app/assets/images/user.jpg'), filename: 'defaultpic.jpg')
+    end
+  end
+
+  def ensure_mural
+      unless self.mural.attached?
+        self.mural.attach(io: File.open('app/assets/images/whiskey.jpg'), filename: 'defaultmural.jpg')
+    end
+  end
 end

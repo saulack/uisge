@@ -10,7 +10,10 @@ class UserProfile extends React.Component {
     debugger
       return (
         <div>
-          <h1>{this.porps.user.username}</h1>
+          <h1>Username</h1>
+
+
+
         </div>
       )
     }

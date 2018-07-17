@@ -10,7 +10,7 @@ import { merge } from 'lodash';
     let newState = { id: action.user.id };
     return merge({}, state, newState);
   case LOGOUT_CURRENT_USER:
-    return defaultState;
+    return state;
   default:
     return state;
   }
