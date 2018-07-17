@@ -3,7 +3,8 @@ import React from 'react';
 class PostForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.post || {body: '',
+    this.state = this.props.post || {
+      body: '',
       drink_id: this.props.match.params.drinkId,
       rating: 1,
       photoFile: null,
@@ -60,10 +61,9 @@ const preview = this.state.photoUrl ? <img
 
           <label className="post-label" >What did you think?</label>
           <textarea className="post-body"
-            rows="10"
-            cols="60"
             onChange={this.handleChange('body')}
-            vlue={this.state.body}/>
+            value={this.state.body}
+            rows="10" cols="60" />
 
           <label className="post-label">Rate it!</label>
           <h3>{this.state.rating}</h3>

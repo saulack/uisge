@@ -1,5 +1,6 @@
 import React from 'react';
 import PostIndexItem from './post_index_item';
+import { withRouter } from 'react-router-dom';
 
 
 class PostIndex extends React.Component {
@@ -11,8 +12,8 @@ class PostIndex extends React.Component {
     const postItem = this.props.posts.map( post => {
       return <PostIndexItem
         key={`post-${post.id}`}
-        history={this.props.history}
         post={post}
+        history={this.props.history}
         deletePost={this.props.deletePost}
         drinks={this.props.drinks}
         users={this.props.users}
@@ -32,4 +33,4 @@ class PostIndex extends React.Component {
   }
 }
 
-export default PostIndex;
+export default withRouter(PostIndex);

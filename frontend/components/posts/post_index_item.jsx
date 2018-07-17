@@ -2,21 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class PostIndexItem extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.handleDelete = this.handleDelete.bind(this);
-  }
-
   componentDidMount() {
     this.props.fetchRegions()
   }
 
-  handleDelete(e) {
-    this.props.deletePost(e.target.value).then(
-      this.props.history.push('/posts')
-    );
-  }
 
 
   render(){
@@ -44,11 +33,7 @@ class PostIndexItem extends React.Component {
               <i className="fas fa-info-circle"></i>
             </Link>
 
-            <button className="post-panel-link"
-              value={this.props.post.id}
-              onClick={this.handleDelete}>
-              <i className="far fa-trash-alt"></i>
-            </button>
+
           </div>
 
         </li>
