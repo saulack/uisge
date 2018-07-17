@@ -19,11 +19,11 @@ class Api::PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(prams[:id])
+    @post = Post.find(prams[:postId])
     if @post.author_id == current_user.id && @post.update(post_params)
       render :show
     else
-      render json: @post.errors.full_mesages
+      render json: @post.errors.full_mesages, status: 422
     end
   end
 

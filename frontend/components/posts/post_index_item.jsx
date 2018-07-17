@@ -10,7 +10,7 @@ class PostIndexItem extends React.Component {
 
   render(){
       const drinkId = this.props.post.drink_id
-      
+
       debugger
     return (
       <div>
@@ -40,7 +40,7 @@ class PostIndexItem extends React.Component {
 
 
           <div className="post-panel-link-parent" >
-            <Link to={'/posts/postedit'} className="post-panel-link">
+            <Link to={`/posts/postedit/${this.props.post.id}`} className="post-panel-link">
               <i className="far fa-edit" ></i>
             </Link>
             <Link to={'/posts/postshow'} className="post-panel-link">

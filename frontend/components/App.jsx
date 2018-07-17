@@ -10,7 +10,7 @@ import CreateDrinkFormContainer from './drinks/create_drink_form_container';
 import EditDrinkFormContainer from './drinks/edit_form_container';
 import PostIndexContainer from './posts/post_index_container';
 import CreatePostFormContainer from './posts/create_post_form_container';
-import ContainMe from './special/special';
+import EditPostFormContainer from './posts/edit_post_container';
 
 const App = () => {
   return(
@@ -24,7 +24,7 @@ const App = () => {
           <GreetingContainer />
         </header>
 
-        <ProtectedRoute exact path={'/'} component={ContainMe}/>
+        <ProtectedRoute exact path={'/'}/>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute exact path="/drinkadd" component={CreateDrinkFormContainer} />
@@ -32,6 +32,7 @@ const App = () => {
         <ProtectedRoute  exact path="/posts" component={DrinksIndexContainer} />
         <ProtectedRoute exact path="/posts/drink/:drinkId" component={DrinkShowContainer} />
         <ProtectedRoute exact path={"/posts/:drinkId/postadd"} component={CreatePostFormContainer} />
+        <ProtectedRoute exact path={"/posts/postedit/:postId"} component={EditPostFormContainer} />
     </div>
   );
 }

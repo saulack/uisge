@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -92,4 +93,4 @@ const preview = this.state.photoUrl ? <img
   }
 }
 
-export default PostForm;
+export default withRouter(PostForm);

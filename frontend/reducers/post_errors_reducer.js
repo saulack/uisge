@@ -1,6 +1,6 @@
 import { RECEIVE_POST_ERRORS,
   RECEIVE_POST,
-  RECEIVE_ALL_POSTS, } from '../actions/session_actions';
+  RECEIVE_ALL_POSTS, } from '../actions/post_actions';
 
 const postErrorsReducer = (state = [], action) => {
   Object.freeze(state);

@@ -1,7 +1,8 @@
 import { RECEIVE_ALL_DRINKS } from '../actions/drink_actions';
+import { RECEIVE_ALL_USERS }
 import { RECEIVE_ALL_POSTS,
-  RECEIVE_POST,
-  REMOVE_POST } from '../actions/post_actions';
+         RECEIVE_POST,
+         REMOVE_POST } from '../actions/post_actions';
 import { merge } from 'lodash';
 
 
