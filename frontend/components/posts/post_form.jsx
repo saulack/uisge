@@ -22,9 +22,6 @@ class PostForm extends React.Component {
     }
   }
 
-  handleSlider(e) {
-    this.setState({rating: e.target.value})
-  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -65,13 +62,19 @@ const preview = this.state.photoUrl ? <img
           <textarea className="post-body"
             rows="10"
             cols="60"
-            value={this.state.body}
-            onChange={this.handleChange('body')}/>
+            onChange={this.handleChange('body')}
+            vlue={this.state.value}/>
 
           <label className="post-label">Rate it!</label>
+          <h3>{this.state.rating}</h3>
          <input  className="slider"
-             onChange={this.handleChange()}
-             type="range" min="1" max="10"  />
+             onChange={this.handleChange('rating')}
+             type="range"
+             step="1"
+             value={this.state.rating}
+             min="1"
+             max="10"
+             />
 
 
            <input  className="form-text post-form-pic"
