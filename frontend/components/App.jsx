@@ -11,7 +11,9 @@ import EditDrinkFormContainer from './drinks/edit_form_container';
 import PostIndexContainer from './posts/post_index_container';
 import CreatePostFormContainer from './posts/create_post_form_container';
 import EditPostFormContainer from './posts/edit_post_container';
-import RenderMe from './special/special'
+import RenderMe from './special/special';
+import UserProfileContainer from './users/user_profile_container';
+
 
 const App = () => {
   return(
@@ -34,6 +36,7 @@ const App = () => {
         <ProtectedRoute exact path="/posts/drink/:drinkId" component={DrinkShowContainer} />
         <ProtectedRoute exact path={"/posts/:drinkId/postadd"} component={CreatePostFormContainer} />
         <ProtectedRoute exact path={"/posts/postedit/:postId"} component={EditPostFormContainer} />
+        <ProtectedRoute exact path={"/users/:userId"} component={UserProfileContainer}/>
     </div>
   );
 }

@@ -19,7 +19,6 @@ class PostForm extends React.Component {
 
   handleChange(field) {
     return (e) => {
-      debugger
       this.setState({[field]: e.target.value });
     }
   }
