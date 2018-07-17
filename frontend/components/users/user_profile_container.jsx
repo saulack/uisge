@@ -6,7 +6,6 @@ import  UserProfile from './user_profile';
 const mapStateToProsps = (state, ownProps) => {
   return {
     user: state.entities.users[ownProps.match.params.userId],
-    currentUser: window.currentUser.id
   };
 };
 

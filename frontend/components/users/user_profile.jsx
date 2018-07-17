@@ -9,8 +9,10 @@ class UserProfile extends React.Component {
   render() {
     debugger
       return (
-        <div>
-          <h1>Username</h1>
+        <div className="profile">
+          <img className="mural" src={this.props.user.muralUrl}></img>
+          <img className="profile-picture" src={this.props.user.pictureUrl} ></img>
+          <h1 className="profile-name">{this.props.user.username}</h1>
 
 
 
