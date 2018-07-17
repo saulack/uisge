@@ -4,9 +4,6 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 
-// NOTE: IMPORTS \/ FOR TESTING ONLY
-// NOTE: IMPORTS /\ FOR TESTING ONLY
-
 document.addEventListener('DOMContentLoaded', () => {
 
   let preloadedState = {};

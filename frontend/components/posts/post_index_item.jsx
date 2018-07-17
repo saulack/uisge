@@ -10,6 +10,7 @@ class PostIndexItem extends React.Component {
 
   render(){
       const drinkId = this.props.post.drink_id
+      const userId = this.props.post.author_id
 
       debugger
     return (
@@ -17,7 +18,7 @@ class PostIndexItem extends React.Component {
 
         <li className="single-post" >
           <div className="post-intro" >
-            <p className="username" > #username &nbsp;</p>
+            <p className="username" >{this.props.users[userId].username} &nbsp;</p>
             <p>is drinking</p>
             <p className="username" >&nbsp; {this.props.drinks[drinkId].bottle_name}</p>
           </div>

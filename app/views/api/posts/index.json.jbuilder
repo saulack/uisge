@@ -2,7 +2,7 @@ json.users do
   @posts.each do |post|
     json.set! post.user.id do
       json.extract! post.user, :id, :username
-      # json.photoUrl url_for(drink.photo)
+      # json.photoUrl url_for(user.photo)
     end
   end
 end
