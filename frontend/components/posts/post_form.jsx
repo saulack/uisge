@@ -13,8 +13,6 @@ class PostForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount(){
-  }
 
   handleChange(field) {
     return (e) => {

@@ -36,7 +36,7 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params
-    psrams.require(:post).permit(:body, :drink_id, :photo, :rating)
+    params.require(:post).permit(:body, :drink_id, :photo, :rating)
   end
 
 end

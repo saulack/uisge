@@ -15,9 +15,8 @@ class PostIndexItem extends React.Component {
   render(){
       const drinkId = this.props.post.drink_id
       const userId = this.props.post.user_id
-      const redionId = this.props.drinks[drinkId].region_id
+      // const redionId = this.props.drinks[drinkId].region_id
 
-      debugger
     return (
       <div>
         <li className="single-post">

@@ -20,7 +20,7 @@ class DrinkIndexItem extends React.Component {
               to={`/drinkedit/${this.props.drink.id}`}><i className="far fa-edit"></i></Link>
             <Link className='drink-panel-links'
               drink={this.props.drink}
-              to={`posts/postadd`}><i className="fas fa-plus"></i>
+              to={`posts/${this.props.drink.id}/postadd`}><i className="fas fa-plus"></i>
             </Link>
           </div>
         </li>
