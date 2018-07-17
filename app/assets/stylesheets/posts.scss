@@ -125,7 +125,11 @@
 }
 
 .post-content {
-  margin-left: 8px;
+  margin: 8px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0,0.1);
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px rgb(230, 230, 213);
 }
 
 .post-intro {
@@ -136,4 +140,35 @@
 .username {
   color: gold;
   font-weight: lighter;
+}
+
+.progress {
+  background: grey;
+  margin-left: 20%;
+  border-radius: 10px;
+  margin-right: 20%;
+}
+.progress-bar {
+  background: gold;
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.post-content-photo-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+.index-post-photo {
+  margin: 10px;
+  height: 85%;
+  width: 85%;
+  align-self: center;
+  border: 1px solid lightgrey;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0,0.1);
 }

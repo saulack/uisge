@@ -18,6 +18,7 @@ class PostForm extends React.Component {
 
   handleChange(field) {
     return (e) => {
+      debugger
       this.setState({[field]: e.target.value });
     }
   }
@@ -26,8 +27,8 @@ class PostForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('post[body]', this.state.bottle_name);
-    formData.append('post[rating]', this.state.description);
+    formData.append('post[body]', this.state.body);
+    formData.append('post[rating]', this.state.rating);
     formData.append('post[drink_id]', this.state.drink_id)
     if (this.state.photoFile) {
       formData.append('post[photo]', this.state.photoFile);
@@ -61,8 +62,8 @@ const preview = this.state.photoUrl ? <img
 
           <label className="post-label" >What did you think?</label>
           <textarea className="post-body"
-            onChange={this.handleChange('body')}
             value={this.state.body}
+            onChange={this.handleChange('body')}
             rows="10" cols="60" />
 
           <label className="post-label">Rate it!</label>
@@ -73,7 +74,7 @@ const preview = this.state.photoUrl ? <img
              step="1"
              value={this.state.rating}
              min="1"
-             max="10"
+             max="100"
              />
 
 

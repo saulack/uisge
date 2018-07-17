@@ -13,7 +13,6 @@ class PostIndex extends React.Component {
       return <PostIndexItem
         key={`post-${post.id}`}
         post={post}
-        history={this.props.history}
         deletePost={this.props.deletePost}
         drinks={this.props.drinks}
         users={this.props.users}
@@ -33,4 +32,4 @@ class PostIndex extends React.Component {
   }
 }
 
-export default withRouter(PostIndex);
+export default PostIndex;
