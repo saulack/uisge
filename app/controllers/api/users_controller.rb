@@ -22,7 +22,8 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.id == current_user.id && @user.update_attributes(user_params)
+    debugger
+    if @user.id == current_user.id && @user.update(user_params)
       render :show
     else
       render @user.errors.full_messages, status: 422

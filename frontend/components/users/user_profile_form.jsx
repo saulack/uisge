@@ -20,10 +20,10 @@ componentDidMount() {
     let formUrl;
     if (this.props.formType === 'picture') {
       formUrl = 'pictureUrl';
+      formData.append('user[picture]', this.state.pictureFile);
     } else {
-      formUrl = 'muralUrl';
+      formData.append('user[mural]', this.state.muralFile);
     }
-    formData.append(`user[${formUrl}]`, this.state[`${formUrl}`]);
     this.props.updateUser(formData, this.state.id).
     then(() => this.props.history.push(`/users/${this.props.user.id}`));
   }
@@ -36,11 +36,10 @@ componentDidMount() {
     fileReader.onloadend = () => {
     let formFile;
     if (this.props.formType === 'picture') {
-        formFile = 'pictureFile'
+        this.setState({pictureFile: file, pictureUrl: fileReader.result});
       } else {
-        formFile = 'muralFile'
+        this.setState({muralFile: file, muralUrl: fileReader.result});
       }
-        this.setState({[formFile]: file, photoUrl: fileReader.result});
     };
     if (file) {
       fileReader.readAsDataURL(file);
@@ -51,27 +50,31 @@ componentDidMount() {
 
   render() {
     let formUrl;
+    let preview;
     if (this.props.formType === 'picture') {
-      formUrl = 'pictureUrl'
+      formUrl = this.state.pictureUrl
+       preview = formUrl ? <img
+      className="profile-pic"
+      src={formUrl} /> : null;
     } else {
-      formUrl = 'muralUrl'
-
+      formUrl = this.state.muralUrl
+       preview = formUrl ? <img
+      className="mural-pic"
+      src={formUrl} /> : null;
     }
 
-    const preview = this.state[`${formUrl}`] ? <img
-        className="label-preview"
-        src={this.state[`${formUrl}`]} /> : null;
 
     return (
       <div>
 
 
-        <form onSubmit={this.handleSubmit}>
+        <form className="change-pic-parent" onSubmit={this.handleSubmit}>
 
-          <input  className="form-text user-profile-picture-edit-form"
+          {preview}
+
+          <input  className="browse"
           onChange={this.handleFile}
           type="file"/>
-        {preview}
 
           <input className="submit"
             type="submit"
