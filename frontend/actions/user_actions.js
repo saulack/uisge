@@ -12,10 +12,11 @@ export const receiveAllUsers = (users) => {
   };
 };
 
-export const receiveUser = user => {
+export const receiveUser = ({ user, posts }) => {
   return {
     type: RECEIVE_USER,
-    user
+    user,
+    posts
   };
 };
 
@@ -40,8 +41,8 @@ export const fetchUsers = () => {
 
 export const fetchUser = (id) => {
   return dispatch => {
-    return UserApiUtil.fetchUser(id).then( user => {
-      return dispatch(receiveUser(user)), err => {
+    return UserApiUtil.fetchUser(id).then( payload => {
+      return dispatch(receiveUser(payload)), err => {
         return dispatch(receiveUserErrors(err.responseJSON))
       };
     })

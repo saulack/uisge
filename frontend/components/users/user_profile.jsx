@@ -18,17 +18,24 @@ class UserProfile extends React.Component {
   }
 
 
+
   render() {
+    return (
+      <div>
 
+      <div className="profile">
+        <img onClick={() => this.handleRedirect('mural')}className="mural" src={this.props.user.muralUrl}></img>
+        <img onClick={() => this.handleRedirect('picture')} className="profile-picture" src={this.props.user.pictureUrl} ></img>
+        <h1 className="profile-name">{this.props.user.username}</h1>
+      </div>
 
-      return (
-        <div className="profile">
-          <img onClick={() => this.handleRedirect('mural')}className="mural" src={this.props.user.muralUrl}></img>
-          <img onClick={() => this.handleRedirect('picture')} className="profile-picture" src={this.props.user.pictureUrl} ></img>
-          <h1 className="profile-name">{this.props.user.username}</h1>
-        </div>
+      <div>
+        {this.props.posts}
+      </div>
+
+    </div>
+
       )
-
     }
   }
 

@@ -24,11 +24,8 @@ componentDidMount() {
       formUrl = 'muralUrl';
     }
     formData.append(`user[${formUrl}]`, this.state[`${formUrl}`]);
-    // formData.append(`user[${opposite}]`, this.state.body);
-    // formData.append(`user[username]`, this.state.body);
-    // formData.append(`user[password]`, this.state.body);
-    // formData.append(`user[email]`, this.state.body);
-    this.props.updateUser(formData, this.state.id).then(() => this.props.history.push(`/users/${this.props.user.id}`));
+    this.props.updateUser(formData, this.state.id).
+    then(() => this.props.history.push(`/users/${this.props.user.id}`));
   }
 
 
@@ -39,11 +36,11 @@ componentDidMount() {
     fileReader.onloadend = () => {
     let formFile;
     if (this.props.formType === 'picture') {
-      formFile = 'pictureFile'
-    } else {
-      formFile = 'muralFile'
-    }
-      this.setState({[formFile]: file, photoUrl: fileReader.result});
+        formFile = 'pictureFile'
+      } else {
+        formFile = 'muralFile'
+      }
+        this.setState({[formFile]: file, photoUrl: fileReader.result});
     };
     if (file) {
       fileReader.readAsDataURL(file);
@@ -62,16 +59,19 @@ componentDidMount() {
     }
 
     const preview = this.state[`${formUrl}`] ? <img
-        className="user-profile-piscture-edit"
+        className="label-preview"
         src={this.state[`${formUrl}`]} /> : null;
 
     return (
       <div>
-        {preview}
+
+
         <form onSubmit={this.handleSubmit}>
-          <input  className="user-profile-picture-edit-form"
+
+          <input  className="form-text user-profile-picture-edit-form"
           onChange={this.handleFile}
           type="file"/>
+        {preview}
 
           <input className="submit"
             type="submit"
