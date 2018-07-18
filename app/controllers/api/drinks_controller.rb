@@ -16,8 +16,8 @@ class Api::DrinksController < ApplicationController
   end
 
   def update
-    @drink = Drink.find_by(params[:drinkId])
-    if @drink.update(drink_params)
+    @drink = Drink.find(params[:id])
+    if @drink.update_attributes(drink_params)
       render :show
     else
       render json: @drink.errors.full_messages, status: 422

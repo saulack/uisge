@@ -31,7 +31,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    action: (post) => dispatch(updatePost(post)),
+    action: (post, postId) => dispatch(updatePost(post, postId)),
     fetchPost: (id) => dispatch(fetchPost(id))
   };
 };

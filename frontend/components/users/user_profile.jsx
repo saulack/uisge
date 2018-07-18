@@ -2,12 +2,12 @@ import React from 'react';
 
 class UserProfile extends React.Component {
   componentDidMount() {
-    this.props.fetchUser(this.props.match.params.postId);
+    this.props.fetchUser(this.props.match.params.userId);
   }
 
 
   render() {
-    
+
 
       return (
         <div className="profile">

@@ -19,7 +19,7 @@ class Api::PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(prams[:postId])
+    @post = Post.find(params[:id])
     if @post.author_id == current_user.id && @post.update(post_params)
       render :show
     else

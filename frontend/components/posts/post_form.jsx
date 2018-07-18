@@ -33,7 +33,7 @@ class PostForm extends React.Component {
     if (this.state.photoFile) {
       formData.append('post[photo]', this.state.photoFile);
     }
-    this.props.action(formData).then(() => this.props.history.push('/posts'));
+    this.props.action(formData, this.state.id).then(() => this.props.history.push('/posts'));
   }
 
 

@@ -65,9 +65,9 @@ export const createPost = post => {
   };
 };
 
-export const updatePost = post => {
+export const updatePost = (post, postId) => {
   return dispatch => {
-    return PostApiUtil.updatePost(post).then( post => {
+    return PostApiUtil.updatePost(post, postId).then( post => {
       return dispatch(receivePost(post)), err => {
         return dispatch(receivePostErrors(err.responseJSON))
       }
