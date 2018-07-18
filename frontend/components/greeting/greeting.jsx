@@ -10,7 +10,6 @@ class Greeting extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     this.props.logout();
   }
 

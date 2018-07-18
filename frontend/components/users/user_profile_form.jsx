@@ -11,26 +11,23 @@ class UserProfileForm extends React.Component {
   }
 
 componentDidMount() {
-  this.props.fetchUser(this.props.user.id);
+  this.props.fetchUser(this.props.match.params.userId);
 }
 
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
     let formUrl;
-    let opposite;
     if (this.props.formType === 'picture') {
       formUrl = 'pictureUrl';
-      opposite = 'muralUrl';
     } else {
       formUrl = 'muralUrl';
-      opposite = 'pictureUrl';
     }
-    formData.append(`user[${formUrl}]`, this.state.body);
-    formData.append(`user[${opposite}]`, this.state.body);
-    formData.append(`user[username]`, this.state.body);
-    formData.append(`user[password]`, this.state.body);
-    formData.append(`user[email]`, this.state.body);
+    formData.append(`user[${formUrl}]`, this.state[`${formUrl}`]);
+    // formData.append(`user[${opposite}]`, this.state.body);
+    // formData.append(`user[username]`, this.state.body);
+    // formData.append(`user[password]`, this.state.body);
+    // formData.append(`user[email]`, this.state.body);
     this.props.updateUser(formData, this.state.id).then(() => this.props.history.push(`/users/${this.props.user.id}`));
   }
 
@@ -61,18 +58,20 @@ componentDidMount() {
       formUrl = 'pictureUrl'
     } else {
       formUrl = 'muralUrl'
+
     }
 
-    const preview = this.state.photoUrl ? <img
+    const preview = this.state[`${formUrl}`] ? <img
         className="user-profile-piscture-edit"
-        src={this.state.formUrl} /> : null;
+        src={this.state[`${formUrl}`]} /> : null;
 
     return (
       <div>
+        {preview}
         <form onSubmit={this.handleSubmit}>
           <input  className="user-profile-picture-edit-form"
           onChange={this.handleFile}
-          type="file"/>{preview}
+          type="file"/>
 
           <input className="submit"
             type="submit"

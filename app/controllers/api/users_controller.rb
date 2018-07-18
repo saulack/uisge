@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      render 'api/users/show.json.jbuilder'
+      render :show
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -22,8 +22,7 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    debugger
-    if @user.id == current_user.id && @user.update(user_params)
+    if @user.id == current_user.id && @user.update_attributes(user_params)
       render :show
     else
       render @user.errors.full_messages, status: 422
@@ -34,7 +33,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    debugger
     params.require(:user).permit(:username, :email, :password, :picture, :mural)
   end
 

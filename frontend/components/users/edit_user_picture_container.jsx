@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 import UserProfileForm from './user_profile_form';
 import { fetchUser, updateUser } from '../../actions/user_actions';
+import { withRouter } from 'react-router-dom';
+
+
 const mapStateToProps = (state, ownProps) => {
   return {
     errors: state.errors.users,
@@ -17,4 +20,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserProfileForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserProfileForm));
