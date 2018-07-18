@@ -6,17 +6,28 @@ class UserProfile extends React.Component {
     super(props);
 
     this.handleRedirect = this.handleRedirect.bind(this);
-
+    this.renderPosts = this.renderPosts.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
   }
 
+
   handleRedirect(type) {
     this.props.history.push(`/users/${this.props.user.id}/${type}`)
   }
 
+  renderPosts() {
+    return
+    this.props.posts.map((post, i) => {
+      return (
+        <li key={`up-${i}`}>
+          <p>{post.body}</p>
+        </li>
+      );
+    })
+  }
 
 
   render() {
@@ -29,8 +40,10 @@ class UserProfile extends React.Component {
         <h1 className="profile-name">{this.props.user.username}</h1>
       </div>
 
+
+
       <div>
-        {this.props.posts}
+        {this.renderPosts()}
       </div>
 
     </div>
