@@ -13,7 +13,8 @@ import CreatePostFormContainer from './posts/create_post_form_container';
 import EditPostFormContainer from './posts/edit_post_container';
 import RenderMe from './special/special';
 import UserProfileContainer from './users/user_profile_container';
-
+import UserProfilePicture from './users/edit_user_picture_container';
+import UserProfileMural from './users/edit_user_mural_container';
 
 const App = () => {
   return(
@@ -37,6 +38,8 @@ const App = () => {
         <ProtectedRoute exact path={"/posts/:drinkId/postadd"} component={CreatePostFormContainer} />
         <ProtectedRoute exact path={"/posts/postedit/:postId"} component={EditPostFormContainer} />
         <ProtectedRoute exact path={"/users/:userId"} component={UserProfileContainer}/>
+        <ProtectedRoute exact path={'/users/:userId/picture'} component={UserProfilePicture} />
+        <ProtectedRoute exact path={'/users/:userId/mural'} component={UserProfileMural} />
     </div>
   );
 }

@@ -14,18 +14,25 @@ flex-direction: column;
 
 .profile-picture {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   height: 150px;
   width: 150px;
-  margin-top: 320px;
+  margin-top: 300px;
   margin-left: 15%;
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
   border-radius: 50%;
 }
 
+.profile-picture:hover {
+  opacity: 0.3;
+}
+.mural:hover {
+  opacity: 0.3;
+}
+
 .profile-name {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   color: grey;
   margin-left: 25%;
 }
