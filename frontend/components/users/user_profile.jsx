@@ -7,7 +7,8 @@ class UserProfile extends React.Component {
 
 
   render() {
-    debugger
+    
+
       return (
         <div className="profile">
           <img className="mural" src={this.props.user.muralUrl}></img>

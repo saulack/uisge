@@ -10,6 +10,7 @@ class Greeting extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     this.props.logout();
   }
 
@@ -20,7 +21,7 @@ class Greeting extends React.Component {
 
          <div className="sign-name-parent">
            <Link to={`/users/${this.props.currentUser.id}`}><img
-             className="user-img-nav" 
+             className="user-img-nav"
              src={this.props.currentUser.pictureUrl}></img></Link>
            <button className="sign-user" onClick={this.handleSubmit}>Logout</button>
          </div>

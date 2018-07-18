@@ -12,7 +12,7 @@ class PostIndexItem extends React.Component {
       const drinkId = this.props.post.drink_id
       const userId = this.props.post.author_id
 
-      debugger
+      
     return (
       <div>
 

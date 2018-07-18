@@ -1,11 +1,3 @@
-json.users do
-  @posts.each do |post|
-    json.set! post.user.id do
-      json.extract! post.user, :id, :username
-      json.pictureUrl url_for(user.picture)
-    end
-  end
-end
 
 json.posts do
   @posts.each do |post|
@@ -16,11 +8,22 @@ json.posts do
   end
 end
 
+
 json.drinks do
   @posts.each do |post|
     json.set! post.drink.id do
       json.extract! post.drink, :id, :bottle_name, :region_id
-      json.photoUrl url_for(drink.photo)
+      json.photoUrl url_for(post.drink.photo)
+    end
+  end
+end
+
+json.users do
+  @posts.each do |post|
+    json.set! post.user.id do
+      json.extract! post.user, :id, :username
+      json.pictureUrl url_for(post.user.picture)
+      json.muralUrl url_for(post.user.mural)
     end
   end
 end

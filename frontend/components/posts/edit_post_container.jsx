@@ -22,7 +22,6 @@ class EditPostForm extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     post: state.entities.posts[ownProps.match.params.postId],
     formType: 'Edit',

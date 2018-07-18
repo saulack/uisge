@@ -12,19 +12,18 @@
 #
 
 class Drink < ApplicationRecord
-  validates :bottle_name, :description, presence: true
+  validates :bottle_name, :description, :region_id, :user_id, presence: true
+
   validate :ensure_photo
 
 
-  belongs_to :user,
-  foreign_key: :user_id,
-  class_name: :User
+  belongs_to :user
 
-  belongs_to :region,
-  foreign_key: :region_id,
-  class_name: :Region
+  belongs_to :region
 
-  has_many :posts
+  has_many :posts,
+  foreign_key: :drink_id,
+  class_name: :Drink
 
 
 

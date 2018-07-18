@@ -6,13 +6,13 @@
 #  body       :text             not null
 #  rating     :integer          not null
 #  author_id  :integer          not null
+#  drink_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  drink_id   :integer          not null
 #
 
 class Post < ApplicationRecord
-validates :body, :rating, presence: true
+validates :body, :rating, :drink_id, :author_id, presence: true
 
 
 belongs_to :drink
