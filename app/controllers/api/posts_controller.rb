@@ -40,7 +40,7 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:body, :drink_id, :photo, :rating)
+    params.require(:post).permit(:body, :drink_id, :rating, :photo)
   end
 
 end

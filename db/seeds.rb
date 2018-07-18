@@ -10,13 +10,13 @@
 
 
 User.destroy_all
-
-user1 = User.create!(username: 'saul', password: 'password', email: 'saulack@email.com')
-user2 = User.create!(username: 'saul1', password: 'password', email: 'saula@email.com')
-user3 = User.create!(username: 'saul2', password: 'password', email: 'saulb@email.com')
-
+Drink.destroy_all
+Post.destroy_all
 Region.destroy_all
 
+user1 = User.create!(username: 'saul', password: 'password', email: 'saulack@email.com')
+user2 = User.create!(username: 'matthias', password: 'password', email: 'matthias@email.com')
+user3 = User.create!(username: 'SomeOtherDude', password: 'password', email: 'otherguy@email.com')
 
 speyside = Region.create!(region: 'Speyside')
 campbeltown = Region.create!(region: 'Campbeltown')
@@ -25,40 +25,42 @@ highlands = Region.create!(region: 'Highland')
 lowlands = Region.create!(region: 'Lowland')
 blend = Region.create!(region: 'Blend')
 
-Drink.destroy_all
-# lagavulin = Drink.create!(
+# 
+# lagavulin = Drink.new(
 #   bottle_name: 'Lagavulin',
 #   region_id: islay.id,
-#   user_id: user1.id,
-#   description: 'the yummiest'
-#   photoFile: File.read('/home/saulack/Pictures/oban.jpg'))
+#   description: 'the yummiest')
 #
+#   lagavulin.photo.attach(io: File.open('/home/saulack/Pictures/scotch/ard.jpg'), filename: 'onedude.jpg')
 #
-# d_black = Drink.create!(
+# d_black = Drink.new(
 #   bottle_name: 'Johny Walker Double Black',
 #   region_id: blend.id,
-#   user_id: user2.id,
-#   description: 'suprisingly good for a johnny wlaker'
-#   photoFile: File.read('/home/saulack/Pictures/oban.jpg'))
+#   description: 'suprisingly good for a johnny wlaker')
+#
+# d_black.photo.attach(io: File.open('/home/saulack/Pictures/scotch/ard.jpg'), filename: 'anotherdude.jpg')
 #
 #
-# uisge_va = Drink.create!(
+# oban = Drink.new(
 #   bottle_name: 'Uisge-va',
 #   region_id: blend.id,
-#   user_id: user3.id,
-#   description: 'best blend out there'
-#   photoFile: File.read('/home/saulack/Pictures/oban.jpg'))
-
-
-
-Post.destroy_all
-
-# post1 = Post.create!(
+#   description: 'best blend out there')
+#
+# oban.photo.attach(io: File.open('/home/saulack/Pictures/scotch/ard.jpg'), filename: 'yupanother.jpg')
+#
+#
+# post1 = Post.new(
 #   body: "wow im so posty",
 #   rating: 4,
 #   author_id: user1.id,
-#   drink_id: lagavulin.id
+#   drink_id: lagavulin.id)
+#
+# post1.photo.attach(io: File.open('/home/saulack/Pictures/scotch/ard.jpg'), filename: 'newerends.jpg')
 #
 #
-# post2 = Post.create!(body: "im another post but im not as posty as the other one",rating: 4, author_id: 28, drink_id: 3)
-#   i
+#
+#
+#   lagavulin.save!
+#   d_black.save!
+#   oban.save!
+#   post1.save!

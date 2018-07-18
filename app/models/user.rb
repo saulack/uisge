@@ -23,6 +23,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_one_attached :picture
+  
   has_one_attached :mural
 
   has_many :drinks_added,
@@ -67,8 +68,9 @@ class User < ApplicationRecord
   end
 
   def ensure_mural
-      unless self.mural.attached?
-        self.mural.attach(io: File.open('app/assets/images/whiskey.jpg'), filename: 'defaultmural.jpg')
+    unless self.mural.attached?
+      self.mural.attach(io: File.open('app/assets/images/whiskey.jpg'), filename: 'defaultmural.jpg')
     end
   end
+
 end
