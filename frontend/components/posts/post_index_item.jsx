@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PostShow from './post_show_container';
 
 class PostIndexItem extends React.Component {
   componentDidMount() {
@@ -14,7 +15,8 @@ class PostIndexItem extends React.Component {
 
 
   render(){
-      const drinkId = this.props.post.drink_id
+    const drinkId = this.props.post.drink_id
+
       const userId = this.props.post.author_id
       let edit;
       let deleteButton;
@@ -59,7 +61,7 @@ class PostIndexItem extends React.Component {
             <div className="post-panel-link-parent" >
               {edit}
               {deleteButton}
-            <Link to={'/posts/postshow'} className="post-panel-link">
+            <Link to={`/posts/postshow/${this.props.post.id}`} className="post-panel-link">
               <i className="fas fa-info-circle"></i>
             </Link>
           </div>

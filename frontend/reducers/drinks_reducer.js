@@ -1,6 +1,6 @@
 import { merge } from 'lodash';
 import { RECEIVE_USER } from '../actions/user_actions'
-import { RECEIVE_ALL_POSTS } from '../actions/post_actions';
+import { RECEIVE_ALL_POSTS, RECEIVE_POST } from '../actions/post_actions';
 import { RECEIVE_DRINK,
          RECEIVE_ALL_DRINKS,
          REMOVE_DRINK, } from '../actions/drink_actions';
@@ -17,9 +17,11 @@ import { RECEIVE_DRINK,
         delete newState[action.drinkId];
         return newState;
       case RECEIVE_ALL_POSTS:
-        return merge({}, state, action.drinks)
+        return merge({}, state, action.drinks);
       case RECEIVE_USER:
-        return merge({}, state, action.drinks)
+        return merge({}, state, action.drinks);
+      case RECEIVE_POST:
+        return merge({}, state, {[action.drink.id]: action.drink})
       default:
         return state;
     };

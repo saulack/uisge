@@ -14,10 +14,13 @@ export const receiveAllPosts = ({posts, users, drinks}) => {
   };
 };
 
-export const receivePost = post => {
+export const receivePost = ({post, drink, user}) => {
+  debugger
   return {
     type: RECEIVE_POST,
-    post
+    post,
+    drink,
+    user
   };
 };
 
@@ -47,8 +50,8 @@ export const fetchPosts = () => {
 
 export const fetchPost = id => {
   return dispatch => {
-    return PostApiUtil.fetchPost(id).then( post => {
-      return dispatch(receivePost(post)), err => {
+    return PostApiUtil.fetchPost(id).then( payload => {
+      return dispatch(receivePost(payload)), err => {
         dispatch(receivePostErrors(err.responseJSON));
       }
     });

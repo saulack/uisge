@@ -59,7 +59,7 @@ class SessionForm extends React.Component {
           placeholder=" email" />
       </label>;
     } else {
-       demo = <button className="submit" onClick={this.demoLogin}>Demo Login</button>;
+       demo = <button className="demo" onClick={this.demoLogin}>Demo Login</button>;
     }
 
 
