@@ -7,7 +7,6 @@ import { merge } from 'lodash';
   Object.freeze(state);
   switch (action.type) {
   case RECEIVE_CURRENT_USER:
-    debugger
     let newState = { id: action.user.id };
     return merge({}, state, newState);
   case LOGOUT_CURRENT_USER:
