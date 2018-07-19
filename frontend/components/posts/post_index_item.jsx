@@ -16,7 +16,7 @@ class PostIndexItem extends React.Component {
   render(){
       const drinkId = this.props.post.drink_id
       const userId = this.props.post.author_id
-
+      
 
     return (
       <div>

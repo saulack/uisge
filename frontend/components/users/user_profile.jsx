@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import ProfileIndexItem from './profile_index_item';
 
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
 
     this.handleRedirect = this.handleRedirect.bind(this);
-    this.renderPosts = this.renderPosts.bind(this);
   }
 
   componentDidMount() {
@@ -18,19 +18,17 @@ class UserProfile extends React.Component {
     this.props.history.push(`/users/${this.props.user.id}/${type}`)
   }
 
-  renderPosts() {
-    return
-    this.props.posts.map((post, i) => {
-      return (
-        <li key={`up-${i}`}>
-          <p>{post.body}</p>
-        </li>
-      );
-    })
-  }
+
 
 
   render() {
+     const postItem = this.props.posts.map((post, i) => {
+      return <ProfileIndexItem
+          key={`pit-${post.id}`}
+          post={post}
+          user={this.props.user} />
+      })
+
     return (
       <div>
 
@@ -43,14 +41,14 @@ class UserProfile extends React.Component {
 
 
       <div>
-        {this.renderPosts()}
+        {postItem}
       </div>
 
     </div>
 
-      )
-    }
+    )
   }
+}
 
 
 

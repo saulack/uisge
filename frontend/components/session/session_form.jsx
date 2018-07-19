@@ -44,7 +44,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'Sign Up') {
       emailInput = <label className="text-box-box">
         <i className="fa fa-envelope"
-          aria-hidden="true">   | </i>
+          aria-hidden="true">   | &nbsp;</i>
 
         <input className="text-box"
           onChange={this.update('email')}
@@ -66,7 +66,7 @@ class SessionForm extends React.Component {
 
 
         <label className="text-box-box">
-          <i className="fa fa-user">   | </i>
+          <i className="fa fa-user">   | &nbsp;</i>
           <input className="text-box"
             onChange={this.update('username')}
             type="text"
@@ -76,7 +76,7 @@ class SessionForm extends React.Component {
 
 
         <label className="text-box-box">
-          <i className="fa fa-lock" aria-hidden="true">   | </i>
+          <i className="fa fa-lock" aria-hidden="true">   | &nbsp;</i>
           <input className="text-box"
             onChange={this.update('password')}
             type="password" value={this.state.password}
