@@ -2,8 +2,8 @@ import { merge } from 'lodash';
 import { RECEIVE_USER } from '../actions/user_actions'
 import { RECEIVE_ALL_POSTS } from '../actions/post_actions';
 import { RECEIVE_DRINK,
-  RECEIVE_ALL_DRINKS,
-  REMOVE_DRINK, } from '../actions/drink_actions';
+         RECEIVE_ALL_DRINKS,
+         REMOVE_DRINK, } from '../actions/drink_actions';
 
 
   const drinksReducer = (state = {}, action) => {

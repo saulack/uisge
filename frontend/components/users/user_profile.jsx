@@ -21,12 +21,12 @@ class UserProfile extends React.Component {
 
 
   render() {
-     const postItem = this.props.posts.map((post, i) => {
+     const postItem = this.props.posts.map( post => {
+       debugger
       return <ProfileIndexItem
-          key={Math.sqrt(Math.random() * 5454654) }
+          key={post.id}
           post={post}
-          user={this.props.user}
-          fetchDrinks={this.props.fetchDrinks} />
+          user={this.props.user} />
       })
 
     return (

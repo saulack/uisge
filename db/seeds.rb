@@ -17,6 +17,7 @@ Region.destroy_all
 user1 = User.create!(username: 'saul', password: 'password', email: 'saulack@email.com')
 user2 = User.create!(username: 'matthias', password: 'password', email: 'matthias@email.com')
 user3 = User.create!(username: 'SomeOtherDude', password: 'password', email: 'otherguy@email.com')
+guet = User.create!(username: 'Guest', password: 'password', email: 'guest@guest.com')
 
 speyside = Region.create!(region: 'Speyside')
 campbeltown = Region.create!(region: 'Campbeltown')
@@ -25,7 +26,7 @@ highlands = Region.create!(region: 'Highland')
 lowlands = Region.create!(region: 'Lowland')
 blend = Region.create!(region: 'Blend')
 
-# 
+#
 # lagavulin = Drink.new(
 #   bottle_name: 'Lagavulin',
 #   region_id: islay.id,
