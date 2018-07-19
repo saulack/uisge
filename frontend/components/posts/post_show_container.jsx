@@ -12,7 +12,6 @@ class PostShow extends React.Component {
   render () {
     const userId = this.props.post.author_id
     const drinkId = this.props.post.drink_id
-    debugger
 
     let username;
     let userPic;

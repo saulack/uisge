@@ -5,7 +5,6 @@ import { fetchPosts } from '../../actions/post_actions';
 import { fetchDrinks} from '../../actions/drink_actions'
 
 const mapStateToProsps = (state, ownProps) => {
-  debugger
   return {
     user: state.entities.users[ownProps.match.params.userId],
     posts: Object.values(state.entities.posts),
