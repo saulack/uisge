@@ -15,4 +15,5 @@ json.partial! "api/posts/post", post: @post
 
   json.drink do
     json.extract! @post.drink, :id, :bottle_name, :description, :region_id
+    json.photoUrl url_for(@post.drink.photo)
   end

@@ -15,7 +15,6 @@ export const receiveAllPosts = ({posts, users, drinks}) => {
 };
 
 export const receivePost = ({post, drink, user}) => {
-  debugger
   return {
     type: RECEIVE_POST,
     post,

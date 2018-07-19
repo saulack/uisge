@@ -1,0 +1,91 @@
+.p-show-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10%
+}
+
+.p-show-drink-box {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  font-family: monospace;
+  border: 1px solid lightgrey;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.p-show-drink-desc {
+  font-family: monospace;
+  padding: 7px;
+  margin: 20px;
+  border: 1px solid lightgrey;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.p-show-bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.p-show-user-box {
+  max-width: 290px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgrey;
+  font-family: monospace;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.p-show-post-box {
+  max-width: 290px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid lightgrey;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.p-show-body {
+  padding: 7px;
+  border-radius: 3px;
+  margin: 10px;
+  border: 1px solid lightgrey;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+  font-family: monospace;
+
+}
+
+.p-show-rating {
+  align-self: center;
+}
+
+.p-show-username {
+  text-transform: capitalize;
+  font-size: 26px;
+}
+
+.p-show-drinkpic {
+  max-width: 100%;
+}
+
+.p-show-userpic {
+  max-width: 90%;
+  align-self: center;
+  margin: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.p-show-post-photo {
+  max-width: 90%;
+  align-self: center;
+  margin: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid lightgrey
+}
