@@ -22,11 +22,12 @@ class UserProfile extends React.Component {
 
   render() {
      const postItem = this.props.posts.map( post => {
-       debugger
+        if (post.author_id === this.props.user.id) {
       return <ProfileIndexItem
           key={post.id}
           post={post}
           user={this.props.user} />
+        }
       })
 
     return (

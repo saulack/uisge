@@ -23,7 +23,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_one_attached :picture
-  
+
   has_one_attached :mural
 
   has_many :drinks_added,
@@ -33,6 +33,10 @@ class User < ApplicationRecord
   has_many :posts,
   foreign_key: :author_id,
   class_name: :Post
+
+  has_many :drinks,
+  through: :posts,
+  source: :drink
 
 
 

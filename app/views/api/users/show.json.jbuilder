@@ -18,9 +18,9 @@ else
   end
 end
 
-if @user.drinks_added
+if @user.drinks
   json.drinks do
-    @user.drinks_added.each do |drink|
+    @user.drinks.each do |drink|
       json.set! drink.id do
         json.extract! drink, :id, :bottle_name, :description
         json.photoUrl url_for(drink.photo)
