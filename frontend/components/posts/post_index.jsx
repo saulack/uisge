@@ -18,7 +18,8 @@ class PostIndex extends React.Component {
         drinks={this.props.drinks}
         users={this.props.users}
         fetchRegions={this.props.fetchRegions}
-        fetchDrink={this.props.fetchDrink} />;
+        fetchDrink={this.props.fetchDrink}
+        currentUserId={this.props.currentUserId} />;
     })
 
     return (

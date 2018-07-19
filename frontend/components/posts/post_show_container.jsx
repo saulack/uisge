@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPost } from '../../actions/post_actions';
+import { Link } from 'react-router-dom';
 
 class PostShow extends React.Component {
   componentDidMount() {
@@ -42,9 +43,9 @@ class PostShow extends React.Component {
 
           <div className="p-show-user-box">
             <img className="p-show-userpic" src={userPic}/>
-            <span className="p-show-username" >{username}</span>
-            <span>is drinking</span>
-            <span className="p-show-drink-name">{drinkName}</span>
+            <Link to={`users/${userId}`} className="p-show-username" >&nbsp;{username}</Link>
+            <span>&nbsp;is drinking</span>
+            <span className="p-show-drink-name">&nbsp;{drinkName}</span>
           </div>
 
 
