@@ -14,6 +14,7 @@ componentDidMount() {
   this.props.fetchUser(this.props.match.params.userId);
 }
 
+
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();

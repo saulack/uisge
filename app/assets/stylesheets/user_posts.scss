@@ -4,16 +4,26 @@
   justify-content: center;
   border: 1px solid lightgrey;
   margin: 10px;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 30%;
+  margin-right: 30%;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+
+}
+
+.user-prof-header {
+  display: flex;
+  align-items: center;
 }
 
 .user-prof-photo {
   max-width: 80px;
+  max-height: 80px;
   margin: 5px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .user-prof-body {
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
   border: 1px solid lightgrey;
   margin: 10px;
   padding: 10px;
@@ -21,8 +31,11 @@
 
 .user-prof-post-pics {
   margin: 10px;
-
   max-height: 300px;
   align-self: center;
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.prog-prof {
+  margin: 8px;
 }

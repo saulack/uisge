@@ -16,7 +16,18 @@ class PostIndexItem extends React.Component {
   render(){
       const drinkId = this.props.post.drink_id
       const userId = this.props.post.author_id
-      
+      let edit;
+      let deleteButton;
+      if (this.props.post.author_id === this.props.currentUserId) {
+         edit = <Link to={`/posts/postedit/${this.props.post.id}`} className="post-panel-link">
+            <i className="far fa-edit" ></i>
+          </Link>
+
+        deleteButton = <button className="post-panel-link"
+          onClick={() => {this.props.deletePost()}}>
+          <i class="far fa-trash-alt"></i>
+          </button>
+      }
 
     return (
       <div>
@@ -45,10 +56,9 @@ class PostIndexItem extends React.Component {
 
 
 
-          <div className="post-panel-link-parent" >
-            <Link to={`/posts/postedit/${this.props.post.id}`} className="post-panel-link">
-              <i className="far fa-edit" ></i>
-            </Link>
+            <div className="post-panel-link-parent" >
+              {edit}
+              {deleteButton}
             <Link to={'/posts/postshow'} className="post-panel-link">
               <i className="fas fa-info-circle"></i>
             </Link>

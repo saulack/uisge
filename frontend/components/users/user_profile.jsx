@@ -14,8 +14,11 @@ class UserProfile extends React.Component {
   }
 
 
+
   handleRedirect(type) {
+    if (this.props.user.id === this.props.currentUserId) {
     this.props.history.push(`/users/${this.props.user.id}/${type}`)
+    }
   }
 
 
@@ -26,11 +29,12 @@ class UserProfile extends React.Component {
       return <ProfileIndexItem
           key={post.id}
           post={post}
-          user={this.props.user} />
+          user={this.props.user}
+          currentUserId={this.props.currentUserId} />
         }
       })
-
     return (
+
       <div>
 
       <div className="profile">

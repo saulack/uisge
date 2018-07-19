@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     errors: state.errors.users,
     user: state.entities.users[ownProps.match.params.userId],
-    formType: 'mural'
+    formType: 'mural',
+    currentUserId: state.session.id
   };
 };
 

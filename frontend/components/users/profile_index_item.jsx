@@ -10,11 +10,24 @@ class ProfileIndexItem extends React.Component {
     return (
       <div className="user-prof-post-parent">
 
-        <img className="user-prof-photo" src={this.props.drinks[drinkId].photoUrl}/>
+        <div className="user-prof-header">
+          <img className="user-prof-photo" src={this.props.drinks[drinkId].photoUrl}/>
+          <span className="username" >&nbsp;{this.props.user.username}</span>
+          <span>&nbsp; is drinking</span>
+          <span className="username">&nbsp;{this.props.drinks[drinkId].bottle_name}</span>
+        </div>
+
+        <div className="progress prog-prof">
+          <div className="progress-bar" role="progressbar" aria-valuenow={this.props.post.rating}
+            aria-valuemin="0" aria-valuemax="100" style={{width: `50%`}}>
+            {this.props.post.rating}%
+          </div>
+        </div>
+
+        
           <p className="user-prof-body" >{this.props.post.body}</p>
-          <span>{this.props.drinks[drinkId].bottle_name}</span>
           <img className="user-prof-post-pics" src={this.props.post.photoUrl} />
-          <span>{this.props.post.rating}</span>
+
 
     </div>
     )
