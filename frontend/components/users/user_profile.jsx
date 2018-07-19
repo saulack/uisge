@@ -20,13 +20,13 @@ class UserProfile extends React.Component {
 
 
 
-
   render() {
      const postItem = this.props.posts.map((post, i) => {
       return <ProfileIndexItem
-          key={`pit-${post.id}`}
+          key={Math.sqrt(Math.random() * 5454654) }
           post={post}
-          user={this.props.user} />
+          user={this.props.user}
+          fetchDrinks={this.props.fetchDrinks} />
       })
 
     return (
@@ -38,12 +38,9 @@ class UserProfile extends React.Component {
         <h1 className="profile-name">{this.props.user.username}</h1>
       </div>
 
-
-
       <div>
         {postItem}
       </div>
-
     </div>
 
     )

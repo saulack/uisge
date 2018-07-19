@@ -12,11 +12,12 @@ export const receiveAllUsers = (users) => {
   };
 };
 
-export const receiveUser = ({ user, posts }) => {
+export const receiveUser = ({ user, posts, drinks }) => {
   return {
     type: RECEIVE_USER,
     user,
-    posts
+    posts,
+    drinks
   };
 };
 

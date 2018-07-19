@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {username: '', password: '', email: ''}
 
+    this.demoLogin = this.demoLogin.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleErrors = this.handleErrors.bind(this);
@@ -18,6 +19,11 @@ class SessionForm extends React.Component {
     return (e) => {
       this.setState({[field]: e.target.value});
     };
+  }
+
+  demoLogin() {
+    const demoState = this.setState({username: 'Guest', password: 'password' })
+    this.props.processFrom(demoState);
   }
 
   handleSubmit(e) {
@@ -40,6 +46,7 @@ class SessionForm extends React.Component {
    }
 
   render() {
+    let demo;
     let emailInput;
     if (this.props.formType === 'Sign Up') {
       emailInput = <label className="text-box-box">
@@ -51,6 +58,8 @@ class SessionForm extends React.Component {
           type="text"
           placeholder=" email" />
       </label>;
+    } else {
+       demo = <button className="submit" onClick={this.demoLogin}>Demo Login</button>;
     }
 
 
@@ -87,9 +96,12 @@ class SessionForm extends React.Component {
         <input className="submit"
           type="submit"
           value={this.props.formType} />
+          {demo}
 
         <span className="line">______________________</span>
         {this.props.navLink}
+
+
         </form>
       </span>
     </div>

@@ -9,7 +9,8 @@ class PostIndex extends React.Component {
   }
 
   render() {
-    const postItem = this.props.posts.map( post => {
+    const revPosts = this.props.posts.reverse()
+    const postItem = revPosts.map( post => {
       return <PostIndexItem
         key={`post-${post.id}`}
         post={post}

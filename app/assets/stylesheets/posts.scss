@@ -13,9 +13,9 @@
 
 .post-form {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   padding: 5%;
   border: 1px solid lightgrey;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0,0.1);
