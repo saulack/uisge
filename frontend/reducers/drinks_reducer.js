@@ -9,7 +9,7 @@ import { RECEIVE_DRINK,
   const drinksReducer = (state = {}, action) => {
     switch (action.type) {
       case RECEIVE_ALL_DRINKS:
-        return  merge({}, state, action.drinks)
+        return  merge({}, state, action.drinks);
       case RECEIVE_DRINK:
         return merge({}, state, {[action.drink.id]: action.drink })
       case REMOVE_DRINK:

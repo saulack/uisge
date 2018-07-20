@@ -2,7 +2,9 @@ json.posts do
   @posts.each do |post|
     json.set! post.id do
       json.extract! post, :id, :body, :drink_id, :author_id, :rating
+      if post.photo.attached?
       json.photoUrl url_for(post.photo)
+    end
     end
   end
 end
