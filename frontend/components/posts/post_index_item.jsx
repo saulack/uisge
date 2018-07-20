@@ -7,12 +7,6 @@ class PostIndexItem extends React.Component {
     this.props.fetchRegions();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.post.bottle_name !== nextProps.post.bottle_name) {
-      this.fetchPosts();
-    }
-  }
-
 
   render(){
     const drinkId = this.props.post.drink_id
