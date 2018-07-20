@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPost } from '../../actions/post_actions';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class PostShow extends React.Component {
   componentDidMount() {
@@ -86,4 +86,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostShow);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostShow));

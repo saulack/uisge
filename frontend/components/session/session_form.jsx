@@ -21,15 +21,13 @@ class SessionForm extends React.Component {
     };
   }
 
-  demoLogin(e) {
-    e.preventDefault()
+  demoLogin() {
     this.setState({username: 'Guest', password: 'password'});
-    this.handleSubmit(e);
+    this.handleSubmit();
   }
 
 
   handleSubmit(e) {
-    e.preventDefault();
      this.props.processForm(this.state);
    }
 

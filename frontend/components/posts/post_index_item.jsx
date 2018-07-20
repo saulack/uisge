@@ -8,6 +8,7 @@ class PostIndexItem extends React.Component {
   }
 
 
+
   render(){
     const drinkId = this.props.post.drink_id
 
@@ -20,7 +21,7 @@ class PostIndexItem extends React.Component {
           </Link>
 
         deleteButton = <button className="post-panel-link"
-          onClick={() => {this.props.deletePost()}}>
+          onClick={() => {this.props.deletePost(this.props.post.id)}}>
           <i className="far fa-trash-alt"></i>
           </button>
       }
