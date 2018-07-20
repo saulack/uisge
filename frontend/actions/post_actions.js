@@ -40,7 +40,7 @@ export const receivePostErrors = errors => {
 export const fetchPosts = () => {
   return dispatch => {
     return PostApiUtil.fetchPosts().then( payload => {
-      return dispatch(receiveAllPosts(payload)) ,err => {
+      return dispatch(receiveAllPosts(payload)), err => {
         return dispatch(receivePostErrors(err.responseJSON));
       }
     });

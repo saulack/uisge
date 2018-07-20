@@ -27,7 +27,7 @@ class PostIndexItem extends React.Component {
 
         deleteButton = <button className="post-panel-link"
           onClick={() => {this.props.deletePost()}}>
-          <i class="far fa-trash-alt"></i>
+          <i className="far fa-trash-alt"></i>
           </button>
       }
 
@@ -36,9 +36,16 @@ class PostIndexItem extends React.Component {
 
         <li className="single-post" >
           <div className="post-intro" >
-            <p className="username" >{this.props.users[userId].username} &nbsp;</p>
-            <p>is drinking</p>
-            <p className="username" >&nbsp; {this.props.drinks[drinkId].bottle_name}</p>
+            <Link className="username" to={`/users/${userId}`}>
+              <img className="main-post-pic" src={this.props.users[userId].pictureUrl}/>
+            </Link>
+            <Link className="username" to={`/users/${userId}`}>
+              <p>{this.props.users[userId].username} &nbsp;</p>
+            </Link>
+            <p className="textmid">is drinking</p>
+            <Link className="username" to={`posts/drinks/${drinkId}`}>
+            <p>&nbsp; {this.props.drinks[drinkId].bottle_name}</p>
+          </Link>
           </div>
 
           <p className="post-content" >{this.props.post.body}</p>
