@@ -17,7 +17,7 @@ const postsReducer = (state = {}, action) => {
       delete newState[action.postId];
       return newState;
     case RECEIVE_USER:
-      return merge({}, state, action.posts)
+      return merge({}, state, action.posts);
 
         default:
       return state;

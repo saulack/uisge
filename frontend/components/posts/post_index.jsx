@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 class PostIndex extends React.Component {
   componentDidMount() {
-    this.props.fetchPosts()
+    this.props.fetchPosts();
   }
 
   render() {

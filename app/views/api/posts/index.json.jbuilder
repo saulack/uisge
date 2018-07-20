@@ -23,7 +23,6 @@ json.users do
     json.set! post.user.id do
       json.extract! post.user, :id, :username
       json.pictureUrl url_for(post.user.picture)
-      json.muralUrl url_for(post.user.mural)
     end
   end
 end

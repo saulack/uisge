@@ -4,12 +4,12 @@ import PostShow from './post_show_container';
 
 class PostIndexItem extends React.Component {
   componentDidMount() {
-    this.props.fetchRegions()
+    this.props.fetchRegions();
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.post.bottle_name !== nextProps.post.bottle_name) {
-      this.fetchPosts()
+      this.fetchPosts();
     }
   }
 
@@ -43,7 +43,7 @@ class PostIndexItem extends React.Component {
               <p>{this.props.users[userId].username} &nbsp;</p>
             </Link>
             <p className="textmid">is drinking</p>
-            <Link className="username" to={`posts/drinks/${drinkId}`}>
+            <Link className="username" to={`posts/drink/${drinkId}`}>
             <p>&nbsp; {this.props.drinks[drinkId].bottle_name}</p>
           </Link>
           </div>

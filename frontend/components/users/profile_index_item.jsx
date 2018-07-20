@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 
 class ProfileIndexItem extends React.Component {
   render(){
@@ -11,11 +11,16 @@ class ProfileIndexItem extends React.Component {
       <div className="user-prof-post-parent">
 
         <div className="user-prof-header">
-          <img className="user-prof-photo" src={this.props.drinks[drinkId].photoUrl}/>
+          <Link  to={`/posts/drink/${drinkId}`}>
+            <img className="user-prof-photo" src={this.props.drinks[drinkId].photoUrl}/>
+          </Link>
           <span className="username" >&nbsp;{this.props.user.username}</span>
           <span>&nbsp; is drinking</span>
-          <span className="username">&nbsp;{this.props.drinks[drinkId].bottle_name}</span>
-        </div>
+            <Link className="username" to={`/posts/drink/${drinkId}`} >
+              <span >&nbsp;{this.props.drinks[drinkId].bottle_name}</span>
+            </Link>
+          </div>
+
 
         <div className="progress prog-prof">
           <div className="progress-bar" role="progressbar" aria-valuenow={this.props.post.rating}
@@ -24,7 +29,7 @@ class ProfileIndexItem extends React.Component {
           </div>
         </div>
 
-        
+
           <p className="user-prof-body" >{this.props.post.body}</p>
           <img className="user-prof-post-pics" src={this.props.post.photoUrl} />
 
