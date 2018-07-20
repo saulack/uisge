@@ -27,8 +27,18 @@ class DrinksIndex extends React.Component {
           <PostIndexContainer  />
         </div>
 
+
+
+
+
+
         <div className="drink-index">
-          <span className="create-drink"><Link to={'/drinkadd'}>Add Drink</Link></span>
+          <div className="search-parent">
+            &nbsp;<i class="fas fa-search"> | &nbsp;</i>
+            <input className="search" type="search" placeholder="search drinks..." />
+          </div>
+
+        <span className="create-drink"><Link to={'/drinkadd'}>Add Drink</Link></span>
         <ul className="drink-list">
           {drink}
         </ul>
