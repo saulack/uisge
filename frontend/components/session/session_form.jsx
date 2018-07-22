@@ -13,7 +13,9 @@ class SessionForm extends React.Component {
     this.handleErrors = this.handleErrors.bind(this);
   }
 
-
+  componentDidMount() {
+    this.props.clearErrors();
+  }
 
   update(field) {
     return (e) => {

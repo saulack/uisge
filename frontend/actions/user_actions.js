@@ -3,6 +3,7 @@ import * as UserApiUtil from '../util/user_api_util';
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_USER_ERRORS = 'RECEIVE_USER_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_SESSION_ERRORS';
 
 
 export const receiveAllUsers = (users) => {
@@ -27,6 +28,17 @@ export const receiveUserErrors = errors => {
     errors
   };
 };
+
+
+
+export const clearErrors = () => {
+  return dispatch => {
+    return dispatch({
+      type: CLEAR_ERRORS
+    });
+  };
+};
+
 
 export const fetchUsers = () => {
   return dispatch => {

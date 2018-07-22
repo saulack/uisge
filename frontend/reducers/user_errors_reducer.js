@@ -1,6 +1,8 @@
-import { RECEIVE_USER_ERRORS,
+import {
+  RECEIVE_USER_ERRORS,
   RECEIVE_USER,
-  RECEIVE_ALL_USERS, } from '../actions/user_actions';
+  RECEIVE_ALL_USERS,
+  CLEAR_ERRORS } from '../actions/user_actions';
 
 const userErrorsReducer = (state = [], action) => {
   Object.freeze(state);
@@ -10,6 +12,7 @@ const userErrorsReducer = (state = [], action) => {
     case RECEIVE_ALL_USERS:
       return [];
     case RECEIVE_USER:
+    case CLEAR_ERRORS:
       return [];
     default:
       return state;
