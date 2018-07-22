@@ -9,8 +9,6 @@ class DrinksIndex extends React.Component {
     this.props.fetchDrinks();
   }
 
-
-
   render() {
     const drink = this.props.drinks.map( drink => {
       return (
@@ -27,14 +25,9 @@ class DrinksIndex extends React.Component {
           <PostIndexContainer  />
         </div>
 
-
-
-
-
-
         <div className="drink-index">
           <div className="search-parent">
-            &nbsp;<i class="fas fa-search"> | &nbsp;</i>
+            &nbsp;<i className="fas fa-search"> | &nbsp;</i>
             <input className="search" type="search" placeholder="search drinks..." />
           </div>
 

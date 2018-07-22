@@ -138,3 +138,21 @@
    color: white;
    background: #ff6666;
  }
+
+ .broke-parent {
+   margin: 10%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+ }
+
+ .broken {
+   color: red;
+ }
+
+ .fixed {
+   color: red;
+   text-shadow: 8px 8px 8px 8px pink;
+ }

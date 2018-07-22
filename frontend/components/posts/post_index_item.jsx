@@ -52,8 +52,12 @@ class PostIndexItem extends React.Component {
           </div>
 
           <div className="progress">
-            <div className="progress-bar" role="progressbar" aria-valuenow={this.props.post.rating}
-              aria-valuemin="0" aria-valuemax="100" style={{width: `50%`}}>
+            <div className="progress-bar"
+              role="progressbar"
+              aria-valuenow={this.props.post.rating}
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style={{width: `${this.props.post.rating}%`}}>
               {this.props.post.rating}%
             </div>
           </div>

@@ -26,6 +26,7 @@ const App = () => {
         <h1 className="header-title"><Link to={'/posts'}>UISGE</Link></h1>
         <h2 className="subtitle" >TODAYS RAIN</h2>
         </span>
+        <Link className="nav-menu" to={'/posts'}>The Pub</Link>
           <GreetingContainer />
         </header>
 

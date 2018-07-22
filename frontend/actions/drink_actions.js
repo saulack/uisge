@@ -5,7 +5,7 @@ export const RECEIVE_ALL_DRINKS = 'RECEIVE_ALL_DRINKS';
 export const RECEIVE_DRINK = 'RECEIVE_DRINK';
 export const REMOVE_DRINK = 'REMOVE_DRINK';
 export const RECEIVE_REGIONS = 'RECEIVE_REGIONS';
-export const RECEIVE_ERRORS = 'RECEIVE_DRINK_ERRORS';
+export const RECEIVE_DRINK_ERRORS = 'RECEIVE_DRINK_ERRORS';
 
 
 export const receiveAllDrinks = (drinks) => {
@@ -33,7 +33,7 @@ export const removeDrink = (drink) => {
 
 export const receiveDrinkErrors = (errors) => {
   return {
-    type: RECEIVE_ERRORS,
+    type: RECEIVE_DRINK_ERRORS,
     errors
   };
 };
@@ -63,10 +63,10 @@ export const fetchDrinks = () => {
 export const fetchDrink = (id) => {
   return dispatch => {
     return DrinkApiUtil.fetchDrink(id).then( drink => {
-      return dispatch(receiveDrink(drink)), err => {
+      return dispatch(receiveDrink(drink))}, err => {
         return dispatch(receiveDrinkErrors(err.responseJSON));
       }
-    });
+    );
   };
 };
 
@@ -82,13 +82,13 @@ export const updateDrink = (drink, drinkId) => {
   };
 };
 
-export const createDrink = (formData) => {
+export const createDrink = (drink) => {
   return dispatch => {
-    return DrinkApiUtil.createDrink(formData).then( drink => {
-      return dispatch(receiveDrink(drink)), err => {
-        return dispatch(receiveDrinkErrors(err.resonseJSON));
+    return DrinkApiUtil.createDrink(drink).then(
+      drink => dispatch(receiveDrink(drink)), err => {
+        return dispatch(receiveDrinkErrors(err.responseJSON));
       }
-    });
+    );
   };
 };
 

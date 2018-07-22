@@ -11,11 +11,12 @@ class DrinkForm extends React.Component {
       region_id: '',
       photoFile: null,
       photoUrl: null}
+
     this.renderRegions = this.renderRegions.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleFile = this.handleFile.bind(this);
-    this.handleErrors = this.handleErrors.bind(this)
+    this.handleErrors = this.handleErrors.bind(this);
   }
 
   componentDidMount() {
@@ -84,12 +85,13 @@ class DrinkForm extends React.Component {
 
       <div className="drink-form-parent">
         <form className="drink-form" onSubmit={this.handleSubmit}>
-          {this.handleErrors()}
 
+          {this.handleErrors()}
 
           <label className="bottle-edit-labels" >Region</label>
           <select onChange={this.handleChange('region_id')}
             className="drop-bar">
+            <option className="form-text" value="" defaultValue >select region</option>
             {this.renderRegions()}
           </select>
 
