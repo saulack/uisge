@@ -22,8 +22,8 @@ class SessionForm extends React.Component {
   }
 
   demoLogin(e) {
-    this.setState({username: 'Guest', password: 'password'});
-    this.handleSubmit(e);
+    this.setState({username: 'Guest', password: 'password', email: ''});
+    this.handleSubmit()
   }
 
 
@@ -59,7 +59,7 @@ class SessionForm extends React.Component {
       </label>;
     } else {
        demo = <button className="demo"
-         onClick={() => this.demoLogin()} >Demo Login</button>;
+         onClick={this.demoLogin} >Demo Login</button>;
     }
 
 
