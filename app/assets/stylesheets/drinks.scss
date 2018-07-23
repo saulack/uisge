@@ -79,15 +79,14 @@
 
 .drink-index-parent {
   display: flex;
-
 }
 
 
 .drink-index {
   display: flex;
   align-items: flex-end;
-  // margin: 10%;
   flex-direction: column;
+  min-width: 30px;
 }
 
 .drink-list {

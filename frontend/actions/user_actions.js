@@ -5,7 +5,6 @@ export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_USER_ERRORS = 'RECEIVE_USER_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_SESSION_ERRORS';
 
-
 export const receiveAllUsers = (users) => {
   return {
     type: RECEIVE_ALL_USERS,
@@ -29,8 +28,6 @@ export const receiveUserErrors = errors => {
   };
 };
 
-
-
 export const clearErrors = () => {
   return dispatch => {
     return dispatch({
@@ -50,8 +47,6 @@ export const fetchUsers = () => {
   };
 };
 
-
-
 export const fetchUser = (id) => {
   return dispatch => {
     return UserApiUtil.fetchUser(id).then( payload => {
@@ -61,7 +56,6 @@ export const fetchUser = (id) => {
     })
   };
 };
-
 
 export const updateUser = (user, userId) => {
   return dispatch => {
