@@ -52,7 +52,7 @@ class DrinksIndex extends React.Component {
   render() {
     let drink = this.matches().map((drink, i) => {
       if (drink === 'No matches') {
-          return <span key="4015564" className="create-drink"><Link to={'/drinkadd'}>Add</Link></span>
+          return <span key="4015564" className="create-drink"><Link to={'/drinkadd'}>Add New Drink</Link></span>
       } else {
           return ( <DrinkIndexItem drink={drink}
             className="drink-index-parent"
