@@ -22,13 +22,9 @@ class PostIndex extends React.Component {
     })
 
     return (
-      <div className="all-posts-parent">
         <ul className="all-posts">
           {postItem}
         </ul>
-
-      </div>
-
     )
   }
 }

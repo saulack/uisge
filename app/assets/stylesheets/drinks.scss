@@ -79,6 +79,8 @@
 
 .drink-index-parent {
   display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
@@ -91,19 +93,18 @@
 }
 
 .drink-list {
-  border: 1px solid lightgrey;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
   width: 30%;
   min-width: 30%;
   height: 20%;
-  z-index: 0;
   display: flex;
   flex-direction: column;
 }
 
 .drink-item {
+  margin: 5px;
   padding: 10px;
   border-bottom: 1px solid lightgrey;
+  min-width: 190px;
 }
 
 .drink-item:hover {
@@ -113,20 +114,20 @@
 .p-i-i-photo{
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
   height: 90%;
-  width: 90%
+  width: 90%;
+  min-width: 171px;
 }
 
 .create-drink {
-  align-self: center;
-  padding: 30px;
-  width: 100%;
+  min-width: 171px;
   background: #ffc840;
   border: 1px solid lightgrey;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
+  border-radius: 3px;
   color: white;
   text-align: center;
 }
+
 
 .dp-image-title-parent {
   display: flex;
@@ -153,11 +154,14 @@
   border-radius: 3px;
 }
 .search-parent {
-  width: 30%;
-  min-width: 150px;
-  min-height: 30px;
+  align-self: flex-end;
   margin: 15px;
   margin-right: 0px;
+  margin-left: 150px;
+  margin-top: 40px;
+  width: 30%;
+  min-width: 190px;
+  min-height: 30px;
   align-self: flex-end;
   border: 1px solid lightgrey;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);

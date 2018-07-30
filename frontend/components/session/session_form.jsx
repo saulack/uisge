@@ -25,9 +25,9 @@ class SessionForm extends React.Component {
 
   demoLogin(e) {
     this.setState({username: 'Guest', password: 'password', email: ''});
-    this.handleSubmit()
+    this.processForm(this.state)
+    this.handleSubmit();
   }
-
 
   handleSubmit(e) {
      this.props.processForm(this.state);
@@ -61,7 +61,7 @@ class SessionForm extends React.Component {
       </label>;
     } else {
        demo = <button className="demo"
-         onClick={this.demoLogin} >Demo Login</button>;
+         onClick={() => this.demoLogin()}>Demo Login</button>;
     }
 
 
@@ -74,7 +74,6 @@ class SessionForm extends React.Component {
         {this.handleErrors()}
 
         {emailInput}
-
 
         <label className="text-box-box">
           <i className="fa fa-user">   | &nbsp;</i>

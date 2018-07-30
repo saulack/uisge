@@ -52,21 +52,25 @@ class DrinksIndex extends React.Component {
   render() {
     let drink = this.matches().map((drink, i) => {
       if (drink === 'No matches') {
-          return <span key="4015564" className="create-drink"><Link to={'/drinkadd'}>Add New Drink</Link></span>
+          return <li key="4015564" className="create-drink">
+                  <Link className="drink-item" to={'/drinkadd'}>
+                    Add New Drink
+                  </Link>
+                </li>
       } else {
           return ( <DrinkIndexItem drink={drink}
             className="drink-index-parent"
             key={`drink-${drink.id}`}
             deleteDrink={this.props.deleteDrink} />
-        )}
+          )}
         });
 
 
     return (
       <div className="post-and-drink-parent">
-        <div className="post-in-drink">
+
           <PostIndexContainer  />
-        </div>
+
 
         <div className="drink-index">
           <div className="search-parent">
@@ -77,12 +81,12 @@ class DrinksIndex extends React.Component {
             type="search"
             placeholder="search drinks..."
             value={this.state.bottle_name} />
-          </div>
 
-        <ul className="drink-list">
-          {drink}
-        </ul>
-      </div>
+          </div>
+          <ul className="drink-list">
+            {drink}
+          </ul>
+        </div>
       </div>
     )
   }
