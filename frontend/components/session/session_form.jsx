@@ -24,13 +24,14 @@ class SessionForm extends React.Component {
   }
 
   demoLogin(e) {
-    this.setState({username: 'Guest', password: 'password', email: ''});
-    this.props.processForm(this.state);
-    this.props.clearErrors();
+    e.preventDefault();
+    this.setState({username: 'Guest', password: 'password'});
+    this.props.processForm({username: 'Guest', password: 'password'})
     // this.handleSubmit();
   }
 
   handleSubmit(e) {
+    e.preventDefault();
      this.props.processForm(this.state);
    }
 
@@ -62,7 +63,7 @@ class SessionForm extends React.Component {
       </label>;
     } else {
        demo = <button className="demo"
-         onClick={() => this.demoLogin()}>Demo Login</button>;
+         onClick={this.demoLogin}>Demo Login</button>;
     }
 
 
