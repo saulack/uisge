@@ -29,7 +29,6 @@ const App = () => {
 
         <div className="nav-menu">
         <Link className="nav-item" to={'/posts'}>The Pub</Link>
-        <Link className="nav-item" to={`/users/${currentUser.id}`}>Profile</Link>
         </div>
 
           <GreetingContainer />
