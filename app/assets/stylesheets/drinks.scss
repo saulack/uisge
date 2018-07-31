@@ -86,9 +86,9 @@
 
 
 .drink-index {
+  max-width: 15%;
   display: flex;
   align-items: flex-end;
-  // margin: 10%;
   flex-direction: column;
 }
 
@@ -119,6 +119,7 @@
 }
 
 .create-drink {
+  margin: 40px;
   min-width: 171px;
   background: #ffc840;
   border: 1px solid lightgrey;
@@ -154,15 +155,11 @@
   border-radius: 3px;
 }
 .search-parent {
-  align-self: flex-end;
-  margin: 15px;
-  margin-right: 0px;
-  margin-left: 150px;
+  margin: 50px;
   margin-top: 40px;
-  width: 30%;
+  margin-right: 0;
   min-width: 190px;
   min-height: 30px;
-  align-self: flex-end;
   border: 1px solid lightgrey;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
@@ -174,4 +171,5 @@
   color: lightgrey;
   margin: 4px;
   position: absolute;
+  max-width: 27%;
 }

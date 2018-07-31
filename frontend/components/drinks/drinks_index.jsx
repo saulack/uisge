@@ -82,11 +82,11 @@ class DrinksIndex extends React.Component {
             placeholder="search drinks..."
             value={this.state.bottle_name} />
 
-          </div>
           <ul className="drink-list">
             {drink}
           </ul>
         </div>
+      </div>
       </div>
     )
   }

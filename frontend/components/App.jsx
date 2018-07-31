@@ -26,7 +26,12 @@ const App = () => {
         <h1 className="header-title"><Link to={'/posts'}>UISGE</Link></h1>
         <h2 className="subtitle" >TODAYS RAIN</h2>
         </span>
-        <Link className="nav-menu" to={'/posts'}>The Pub</Link>
+
+        <div className="nav-menu">
+        <Link className="nav-item" to={'/posts'}>The Pub</Link>
+        <Link className="nav-item" to={`/users/${currentUser.id}`}>Profile</Link>
+        </div>
+
           <GreetingContainer />
         </header>
 
