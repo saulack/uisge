@@ -74,7 +74,7 @@ class SessionForm extends React.Component {
       <form className="log-form" onSubmit={this.handleSubmit}>
         <h1 className="title">UISGE</h1>
         <h3 className="sub-title">TODAYS RAIN</h3>
-        {this.handleErrors()}
+        {this.handleErrors}
 
         {emailInput}
 
