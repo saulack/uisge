@@ -35,7 +35,7 @@ class SessionForm extends React.Component {
    }
 
   handleErrors() {
-    if (!this.state.username === 'Guest') {
+    if (this.state.username !== 'Guest') {
       return(
         <ul className="errors">
           {this.props.errors.map((error, i) => (
