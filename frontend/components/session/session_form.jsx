@@ -34,20 +34,17 @@ class SessionForm extends React.Component {
      this.props.processForm(this.state);
    }
 
-
    handleErrors() {
-     if (this.props.errors) {
-       return(
-         <ul className="errors">
-           {this.props.errors.map((error, i) => (
-             <li key={`err_key${i}`}>
-               {error}
-             </li>
-           ))}
-         </ul>
-       );
-     }
-    }
+     return(
+       <ul className="errors">
+         {this.props.errors.map((error, i) => (
+           <li key={`err_key${i}`}>
+             {error}
+           </li>
+         ))}
+       </ul>
+     );
+  }
 
   render() {
     let demo;
@@ -74,7 +71,7 @@ class SessionForm extends React.Component {
       <form className="log-form" onSubmit={this.handleSubmit}>
         <h1 className="title">UISGE</h1>
         <h3 className="sub-title">TODAYS RAIN</h3>
-        {this.handleErrors}
+        {this.handleErrors()}
 
         {emailInput}
 
