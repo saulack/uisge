@@ -13,6 +13,12 @@ class PostIndexItem extends React.Component {
     this.props.fetchRegions();
   }
 
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.post.id !== this.props.post.id) {
+  //
+  //   }
+  // }
+
   handleDelete() {
     this.props.deletePost(this.props.post.id);
   }
@@ -55,7 +61,6 @@ class PostIndexItem extends React.Component {
             <img className="index-post-photo"
               src={this.props.post.photoUrl}></img>
           </div>
-
           <div className="progress">
             <div className="progress-bar"
               role="progressbar"
@@ -67,8 +72,6 @@ class PostIndexItem extends React.Component {
             </div>
           </div>
 
-
-
             <div className="post-panel-link-parent" >
               {edit}
               {deleteButton}
@@ -76,7 +79,6 @@ class PostIndexItem extends React.Component {
               <i className="fas fa-info-circle"></i>
             </Link>
           </div>
-
         </li>
       </div>
     )
