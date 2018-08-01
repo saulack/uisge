@@ -21,7 +21,33 @@ Uisge, inspired by Untappd, is a social media application that allows users to p
 
   ![postShow](https://i.imgur.com/dhSUhaB.png)
 
-   Another of my favorite features although perhaps not as technically impressive, was a lot of fun to implement. The personal profile picture and background mural are a combination of AWS services and CSS work to create a beautiful look to the user profile.
+Another of my favorite features although perhaps not as technically impressive, was a lot of fun to implement. The personal profile picture and background mural are a combination of AWS services and CSS work to create a beautiful look to the user profile.
+
+ ```
+ handleSubmit(e) {
+   e.preventDefault();
+   const formData = new FormData();
+   formData.append('post[body]', this.state.body);
+   formData.append('post[rating]', this.state.rating);
+   formData.append('post[drink_id]', this.state.drink_id)
+   if (this.state.photoFile) {
+     formData.append('post[photo]', this.state.photoFile);
+   }
+   this.props.action(formData, this.state.id).then(() => this.props.history.push('/posts'));
+ }
+
+ handleFile(e) {
+   const file = e.currentTarget.files[0];
+   const fileReader = new FileReader();
+   fileReader.onloadend = () => {
+
+     this.setState({photoFile: file, photoUrl: fileReader.result});
+   };
+   if (file) {
+     fileReader.readAsDataURL(file);
+   }
+ }
+```
 
   ![img](https://i.imgur.com/A8oghL0.png)
 

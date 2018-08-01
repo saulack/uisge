@@ -3,32 +3,38 @@ import { Link } from 'react-router-dom';
 import PostShow from './post_show_container';
 
 class PostIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchRegions();
   }
 
-
+  handleDelete() {
+    this.props.deletePost(this.props.post.id);
+  }
 
   render(){
     const drinkId = this.props.post.drink_id
+    const userId = this.props.post.author_id
+    let edit;
+    let deleteButton;
+    if (this.props.post.author_id === this.props.currentUserId) {
+       edit = <Link to={`/posts/postedit/${this.props.post.id}`} className="post-panel-link">
+          <i className="far fa-edit" ></i>
+        </Link>
 
-      const userId = this.props.post.author_id
-      let edit;
-      let deleteButton;
-      if (this.props.post.author_id === this.props.currentUserId) {
-         edit = <Link to={`/posts/postedit/${this.props.post.id}`} className="post-panel-link">
-            <i className="far fa-edit" ></i>
-          </Link>
-
-        deleteButton = <button className="post-panel-link"
-          onClick={() => {this.props.deletePost(this.props.post.id)}}>
-          <i className="far fa-trash-alt"></i>
-          </button>
-      }
+      deleteButton = <button className="post-panel-link"
+        onClick={this.handleDelete}>
+        <i className="far fa-trash-alt"></i>
+        </button>
+    }
 
     return (
       <div>
-
         <li className="single-post" >
           <div className="post-intro" >
             <Link className="username" to={`/users/${userId}`}>
@@ -48,7 +54,6 @@ class PostIndexItem extends React.Component {
           <div className="post-content-photo-parent">
             <img className="index-post-photo"
               src={this.props.post.photoUrl}></img>
-
           </div>
 
           <div className="progress">

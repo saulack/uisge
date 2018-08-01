@@ -81,7 +81,6 @@
     border-radius: 50%;
 }
 
-
 .all-posts-parent {
   display: flex;
   flex-direction: column;
@@ -95,7 +94,7 @@
 }
 
 .all-posts {
-  width: 50px;
+  width: 700px;
   height: 60px;
   margin: 50px;
 }
@@ -104,7 +103,7 @@
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  width: 700px;
+  max-width: 700px;
   border: 1px solid lightgrey;
   margin: 10px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0,0.1);

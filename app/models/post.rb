@@ -14,7 +14,6 @@
 class Post < ApplicationRecord
 validates :body, :rating, :drink_id, :author_id, presence: true
 
-
 belongs_to :drink
 
 belongs_to :user,
