@@ -21,7 +21,7 @@ Uisge, inspired by Untappd, is a social media application that allows users to p
 
   ![postShow](https://i.imgur.com/dhSUhaB.png)
 
-  My other favorite feature although perhaps not as technically impressive, was a lot of fun to implement. The personal profile picture and background mural are a combination of AWS services and CSS work to create a beautiful look to the user profile.
+   Another of my favorite features although perhaps not as technically impressive, was a lot of fun to implement. The personal profile picture and background mural are a combination of AWS services and CSS work to create a beautiful look to the user profile.
 
   ![img](https://i.imgur.com/A8oghL0.png)
 
@@ -55,12 +55,11 @@ This of course is doubly protectes with both model and database level validation
     selectDrink(event) {
       let drink = event.currentTarget.innerText;
       this.setState({inputVal: drink});
-    }`
+    }
 
-
-  `render() {
-    let drink = this.matches().map((drink, i) => {
-      if (drink === 'No matches') {
+    render() {
+      let drink = this.matches().map((drink, i) => {
+        if (drink === 'No matches') {
           return <li key="4015564" className="create-drink">
                   <Link className="drink-item" to={'/drinkadd'}>
                     Add New Drink

@@ -36,7 +36,6 @@ class PostForm extends React.Component {
     this.props.action(formData, this.state.id).then(() => this.props.history.push('/posts'));
   }
 
-
   handleFile(e) {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
@@ -47,7 +46,6 @@ class PostForm extends React.Component {
     if (file) {
       fileReader.readAsDataURL(file);
     }
-
   }
 
 

@@ -34,16 +34,18 @@ class SessionForm extends React.Component {
      this.props.processForm(this.state);
    }
 
-   handleErrors() {
-     return(
-       <ul className="errors">
-         {this.props.errors.map((error, i) => (
-           <li key={`err_key${i}`}>
-             {error}
-           </li>
-         ))}
-       </ul>
-     );
+  handleErrors() {
+    if (!this.state.username === 'Guest') {
+      return(
+        <ul className="errors">
+          {this.props.errors.map((error, i) => (
+            <li key={`err_key${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   render() {
