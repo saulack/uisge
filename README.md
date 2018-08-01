@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Uisge
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+Uisge, inspired bu Untappd, is a social media application that allows users to publicly share their experiences, ratings, and thoughts about Scotch-whiskey known in Scottish Gaelic as uisge-beatha which translates to water of life.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[LIVE](http://uisge.herokuapp.com)
