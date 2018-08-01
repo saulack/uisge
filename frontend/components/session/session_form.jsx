@@ -27,7 +27,6 @@ class SessionForm extends React.Component {
     e.preventDefault();
     this.setState({username: 'Guest', password: 'password'});
     this.props.processForm({username: 'Guest', password: 'password'})
-    // this.handleSubmit();
   }
 
   handleSubmit(e) {
@@ -37,16 +36,18 @@ class SessionForm extends React.Component {
 
 
    handleErrors() {
-     return(
-       <ul className="errors">
-         {this.props.errors.map((error, i) => (
-           <li key={`err_key${i}`}>
-             {error}
-           </li>
-         ))}
-       </ul>
-     );
-   }
+     if (this.props.errors) {
+       return(
+         <ul className="errors">
+           {this.props.errors.map((error, i) => (
+             <li key={`err_key${i}`}>
+               {error}
+             </li>
+           ))}
+         </ul>
+       );
+     }
+    }
 
   render() {
     let demo;
