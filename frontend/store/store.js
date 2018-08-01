@@ -4,11 +4,10 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
 let mWare = [thunk];
-// if (process.env.NODE_ENV !== 'production') {
-//   const logger = require('redux-logger');
-//   mWare = [...mWare, logger];
-// };
-
+if (process.env.NODE_ENV !== 'production') {
+  const { logger } = require('redux-logger');
+  mWare.push(logger);
+};
 
 const configureStore = (preloadedState = {}) => {
   return createStore(rootReducer, preloadedState, applyMiddleware(...mWare));

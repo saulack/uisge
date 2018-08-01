@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -63,7 +62,6 @@ class SessionForm extends React.Component {
        demo = <button className="demo"
          onClick={this.demoLogin}>Demo Login</button>;
     }
-
 
     return (
       <div className="session-log">
