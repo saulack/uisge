@@ -7,7 +7,7 @@
   width: 50%;
   margin-top: 8%;
   margin-bottom: 8%;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
   border: 1px solid lightgrey;
   border-radius: 4px;
 }
@@ -17,5 +17,30 @@
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
   border: 1px solid lightgrey;
   align-self: center;
+  border-radius: 4px;
+}
+
+.description {
+  font-family: monospace;
+  padding: 5px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.d-s-drink {
+  font-family: monospace;
+}
+
+.drink-show-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.drink-show-button {
+  padding: 10px;
+  color: white;
+  background-color: #ffc840;
+  margin: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid lightgrey;
   border-radius: 4px;
 }

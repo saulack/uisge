@@ -13,7 +13,6 @@ class PostIndexItem extends React.Component {
     this.props.fetchRegions();
   }
 
-
   handleDelete() {
     this.props.deletePost(this.props.post.id);
   }

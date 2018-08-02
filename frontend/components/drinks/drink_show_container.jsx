@@ -13,11 +13,12 @@ class DrinkShow extends React.Component {
     return (
       <div className="single-drink-parent">
         <img className="big-label" src={drink.photoUrl}/>
-        <h2>{drink.bottle_name}</h2>
-         <p>{drink.description}</p>
-         <Link to={`/posts/drinkedit/${drink.id}`}>Edit</Link>
-         <Link to={'/posts'}>Back to posts</Link>
-
+        <h2 className="d-s-drink">{drink.bottle_name}</h2>
+         <p className="description" >{drink.description}</p>
+         <div className="drink-show-buttons">
+         <Link className="drink-show-button" to={`/posts/drinkedit/${drink.id}`}>Edit</Link>
+         <Link className="drink-show-button" to={'/posts'}>Back</Link>
+       </div>
       </div>
     )
   }
