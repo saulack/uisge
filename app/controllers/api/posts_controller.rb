@@ -31,7 +31,7 @@ class Api::PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.author_id == current_user.id
       @post.destroy
-      render json: {}
+      render :show
     else
       render json: ['you can not delete someone elses post'], status: 422
     end

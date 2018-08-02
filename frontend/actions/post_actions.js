@@ -23,9 +23,10 @@ export const receivePost = ({post, drink, user}) => {
   };
 };
 
-export const removePost = () => {
+export const removePost = (post) => {
   return {
     type: REMOVE_POST,
+    postId: post.id
   };
 };
 
@@ -78,8 +79,8 @@ export const updatePost = (post, postId) => {
 
 export const deletePost = id => {
   return dispatch => {
-    return PostApiUtil.deletePost(id).then( () => {
-      return dispatch(removePost()), err => {
+    return PostApiUtil.deletePost(id).then( post => {
+      return dispatch(removePost(post)), err => {
         return dispatch(receivePostErrors(err.responseJSON))
       }
     });
