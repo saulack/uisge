@@ -13,11 +13,6 @@ class PostIndexItem extends React.Component {
     this.props.fetchRegions();
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.post.id !== this.props.post.id) {
-  //
-  //   }
-  // }
 
   handleDelete() {
     this.props.deletePost(this.props.post.id);
@@ -29,14 +24,14 @@ class PostIndexItem extends React.Component {
     let edit;
     let deleteButton;
     if (this.props.post.author_id === this.props.currentUserId) {
-       edit = <Link to={`/posts/postedit/${this.props.post.id}`} className="post-panel-link">
-          <i className="far fa-edit" ></i>
-        </Link>
+      edit = <Link to={`/posts/postedit/${this.props.post.id}`} className="post-panel-link">
+        <i className="far fa-edit" ></i>
+      </Link>
 
       deleteButton = <button className="post-panel-link"
         onClick={this.handleDelete}>
         <i className="far fa-trash-alt"></i>
-        </button>
+      </button>
     }
 
     return (
@@ -51,8 +46,8 @@ class PostIndexItem extends React.Component {
             </Link>
             <p className="textmid">is drinking</p>
             <Link className="username" to={`posts/drink/${drinkId}`}>
-            <p>&nbsp; {this.props.drinks[drinkId].bottle_name}</p>
-          </Link>
+              <p>&nbsp; {this.props.drinks[drinkId].bottle_name}</p>
+            </Link>
           </div>
 
           <p className="post-content" >{this.props.post.body}</p>
@@ -72,9 +67,9 @@ class PostIndexItem extends React.Component {
             </div>
           </div>
 
-            <div className="post-panel-link-parent" >
-              {edit}
-              {deleteButton}
+          <div className="post-panel-link-parent" >
+            {edit}
+            {deleteButton}
             <Link to={`/posts/postshow/${this.props.post.id}`} className="post-panel-link">
               <i className="fas fa-info-circle"></i>
             </Link>
