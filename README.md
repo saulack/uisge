@@ -92,8 +92,7 @@ This of course is doubly protectes with both model and database level validation
                     Add New Drink
                   </Link>
                   </li>
-                ```
-
+                  ```
 
 ![img](https://i.imgur.com/oaD05XQ.png)    
 
