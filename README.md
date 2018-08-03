@@ -23,6 +23,7 @@ Uisge, inspired by Untappd, is a social media application that allows users to p
 
 Another of my favorite features although perhaps not as technically impressive, was a lot of fun to implement. The personal profile picture and background mural are a combination of AWS services and CSS work to create a beautiful look to the user profile.
 
+
  ```js
  handleSubmit(e) {
    e.preventDefault();
@@ -47,7 +48,8 @@ Another of my favorite features although perhaps not as technically impressive, 
      fileReader.readAsDataURL(file);
    }
  }
-```
+ ```
+
 
   ![img](https://i.imgur.com/A8oghL0.png)
 
@@ -58,42 +60,49 @@ Using a dynamic front end search. making sure that all the drinks are visible bu
 
 This of course is doubly protectes with both model and database level validations for drink names.
 
-  ```js
-     matches() {
-      const matches = [];
-      if (this.state.inputVal.length === 0) {
-        return this.props.drinks;
-      }
+```js
+ matches() {
+  const matches = [];
+  if (this.state.inputVal.length === 0) {
+    return this.props.drinks;
+  }
 
-      this.props.drinks.forEach(drink => {
-        let sub = drink.bottle_name.slice(0, this.state.inputVal.length);
-        if (sub.toLowerCase() === this.state.inputVal.toLowerCase()) {
-          matches.push(drink);
-        }
-      });
-
-      if (matches.length === 0) {
-        matches.push('No matches');
-      }
-
-      return matches;
+  this.props.drinks.forEach(drink => {
+    let sub = drink.bottle_name.slice(0, this.state.inputVal.length);
+    if (sub.toLowerCase() === this.state.inputVal.toLowerCase()) {
+      matches.push(drink);
     }
+  });
 
-    selectDrink(event) {
-      let drink = event.currentTarget.innerText;
-      this.setState({inputVal: drink});
-    }
+  if (matches.length === 0) {
+    matches.push('No matches');
+  }
+  return matches;
+}
 
-    render() {
-      let drink = this.matches().map((drink, i) => {
-        if (drink === 'No matches') {
-          return <li key="4015564" className="create-drink">
-                  <Link className="drink-item" to={'/drinkadd'}>
-                    Add New Drink
-                  </Link>
-                  </li>
-                  ```
-`
+selectDrink(event) {
+  let drink = event.currentTarget.innerText;
+  this.setState({inputVal: drink});
+}
+
+render() {
+  let drink = this.matches().map((drink, i) => {
+    if (drink === 'No matches') {
+      return <li key="4015564" className="create-drink">
+                <Link className="drink-item" to={'/drinkadd'}>
+                  Add New Drink
+                </Link>
+              </li>
+    } else {
+      return ( <DrinkIndexItem drink={drink}
+        className="drink-index-parent"
+        key={`drink-${drink.id}`}
+        deleteDrink={this.props.deleteDrink} />
+    )}
+  });
+}
+```
+
 ![img](https://i.imgur.com/oaD05XQ.png)    
 
 ![img](https://i.imgur.com/VyQWko3.png)
