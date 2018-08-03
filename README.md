@@ -23,7 +23,7 @@ Uisge, inspired by Untappd, is a social media application that allows users to p
 
 Another of my favorite features although perhaps not as technically impressive, was a lot of fun to implement. The personal profile picture and background mural are a combination of AWS services and CSS work to create a beautiful look to the user profile.
 
- ```
+ ```js
  handleSubmit(e) {
    e.preventDefault();
    const formData = new FormData();
@@ -58,7 +58,8 @@ Using a dynamic front end search. making sure that all the drinks are visible bu
 
 This of course is doubly protectes with both model and database level validations for drink names.
 
-     `matches() {
+  ```js
+     matches() {
       const matches = [];
       if (this.state.inputVal.length === 0) {
         return this.props.drinks;
@@ -90,7 +91,8 @@ This of course is doubly protectes with both model and database level validation
                   <Link className="drink-item" to={'/drinkadd'}>
                     Add New Drink
                   </Link>
-                </li> `
+                  </li>
+                ```
 
 
 ![img](https://i.imgur.com/oaD05XQ.png)    
