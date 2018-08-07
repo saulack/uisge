@@ -16,13 +16,11 @@ class PostForm extends React.Component {
     this.handleFile = this.handleFile.bind(this);
   }
 
-
   handleChange(field) {
     return (e) => {
       this.setState({[field]: e.target.value });
     }
   }
-
 
   handleSubmit(e) {
     e.preventDefault();
@@ -48,6 +46,17 @@ class PostForm extends React.Component {
     }
   }
 
+  handleErrors() {
+    return(
+      <ul className="errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`err_key${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   render() {
 const preview = this.state.photoUrl ? <img
@@ -57,6 +66,7 @@ const preview = this.state.photoUrl ? <img
     return (
       <div className="post-form-parent">
         <form className="post-form" onSubmit={this.handleSubmit}>
+          {this.handleErrors()}
 
           <label className="post-label" >What did you think?</label>
           <textarea className="post-body"
@@ -75,7 +85,6 @@ const preview = this.state.photoUrl ? <img
              max="100"
              />
 
-
            <input  className="form-text post-form-pic"
            onChange={this.handleFile}
            type="file"/>{preview}
@@ -83,7 +92,6 @@ const preview = this.state.photoUrl ? <img
           <input className="submit"
             type="submit"
             value={this.props.formType} />
-
         </form>
       </div>
     )

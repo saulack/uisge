@@ -25,7 +25,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     post: state.entities.posts[ownProps.match.params.postId],
     formType: 'Edit',
-    errors: state.errors.posts
+    errors: Object.values(state.errors.posts)
   };
 };
 

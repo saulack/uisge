@@ -14,7 +14,6 @@ componentDidMount() {
   this.props.fetchUser(this.props.match.params.userId);
 }
 
-
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
@@ -28,8 +27,6 @@ componentDidMount() {
     this.props.updateUser(formData, this.state.id).
     then(() => this.props.history.push(`/users/${this.props.user.id}`));
   }
-
-
 
   handleFile(e) {
     const file = e.currentTarget.files[0];
@@ -48,7 +45,6 @@ componentDidMount() {
 
   }
 
-
   render() {
     let formUrl;
     let preview;
@@ -64,32 +60,20 @@ componentDidMount() {
       src={formUrl} /> : null;
     }
 
-
     return (
       <div>
-
-
         <form className="change-pic-parent" onSubmit={this.handleSubmit}>
-
           {preview}
-
           <input  className="browse"
           onChange={this.handleFile}
           type="file"/>
-
           <input className="submit"
             type="submit"
             value="Select Photo" />
-
         </form>
-
-
       </div>
     )
   }
-
-
-
 }
 
 
