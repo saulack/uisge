@@ -8,7 +8,7 @@ import { clearErrors } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    errors: state.errors.session,
+    errors: Object.values(state.errors.session),
     formType: 'Log In',
     navLink: <Link to={'/signup'}>Sign Up</Link>,
     currentUserId: state.session.id
