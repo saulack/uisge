@@ -52,8 +52,8 @@ class PostIndexItem extends React.Component {
           <p className="post-content" >{this.props.post.body}</p>
 
           <div className="post-content-photo-parent">
+            src={this.props.post.photoUrl}></img>
             <img className="index-post-photo"
-              src={this.props.post.photoUrl}></img>
           </div>
           <div className="progress">
             <div className="progress-bar"
