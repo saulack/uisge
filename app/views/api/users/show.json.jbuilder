@@ -8,7 +8,9 @@ if @user.posts
     @user.posts.each do |post|
       json.set! post.id do
         json.extract! post, :id, :body, :rating, :author_id, :drink_id, :author_id
-        json.photoUrl url_for(post.photo)
+        if post.photo.attached?
+          json.photoUrl url_for(post.photo)
+        end
       end
     end
   end
