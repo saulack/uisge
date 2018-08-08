@@ -19,9 +19,11 @@ class Greeting extends React.Component {
       return(
 
          <div className="sign-name-parent">
-           <Link to={`/users/${this.props.currentUser.id}`}><img className="user-img-nav"
-             
-             src={this.props.currentUser.pictureUrl}></img></Link>
+
+           <Link to={`/users/${this.props.currentUser.id}`} className="prof-link-parent">
+             <p className="profile-link">{this.props.currentUser.username}</p>
+             <img className="user-img-nav"
+                  src={this.props.currentUser.pictureUrl}></img></Link>
            <button className="sign-user" onClick={this.handleSubmit}>Logout</button>
          </div>
      );

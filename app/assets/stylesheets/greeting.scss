@@ -78,3 +78,15 @@
 .nav-item {
   margin: 10px;
 }
+
+.prof-link-parent {
+  display: flex;
+  justify-content: space-between;
+}
+.profile-link {
+  align-self: center;
+  margin-right: 20px;
+}
+.profile-link:hover {
+  color: blue;
+}
