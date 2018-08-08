@@ -14,6 +14,7 @@ class PostForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.handleErrors = this.handleErrors.bind(this);
   }
 
   handleChange(field) {
@@ -47,10 +48,11 @@ class PostForm extends React.Component {
   }
 
   handleErrors() {
+    debugger
     return(
       <ul className="errors">
         {this.props.errors.map((error, i) => (
-          <li key={`err_key${i}`}>
+          <li key={`err_p-key${i}`}>
             {error}
           </li>
         ))}
@@ -66,6 +68,7 @@ const preview = this.state.photoUrl ? <img
     return (
       <div className="post-form-parent">
         <form className="post-form" onSubmit={this.handleSubmit}>
+
           {this.handleErrors()}
 
           <label className="post-label" >What did you think?</label>

@@ -59,21 +59,21 @@ export const fetchPost = id => {
 
 export const createPost = post => {
   return dispatch => {
-    return PostApiUtil.createPost(post).then( post => {
-      return dispatch(receivePost(post)), err => {
+    return PostApiUtil.createPost(post).then(
+      post => dispatch(receivePost(post)), err => {
         return dispatch(receivePostErrors(err.responseJSON));
       }
-    });
+    );
   };
 };
 
 export const updatePost = (post, postId) => {
   return dispatch => {
-    return PostApiUtil.updatePost(post, postId).then( post => {
-      return dispatch(receivePost(post)), err => {
+    return PostApiUtil.updatePost(post, postId).then(
+      post => dispatch(receivePost(post)), err => {
         return dispatch(receivePostErrors(err.responseJSON))
       }
-    });
+    );
   };
 };
 
