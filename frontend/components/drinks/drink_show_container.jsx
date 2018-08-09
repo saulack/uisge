@@ -16,7 +16,7 @@ class DrinkShow extends React.Component {
         <h2 className="d-s-drink">{drink.bottle_name}</h2>
          <p className="description" >{drink.description}</p>
          <div className="drink-show-buttons">
-         <Link className="drink-show-button" to={`/posts/drinkedit/${drink.id}`}>Edit</Link>
+         <Link className="drink-show-button" to={`/drinkedit/${drink.id}`}>Edit</Link>
          <Link className="drink-show-button" to={'/posts'}>Back</Link>
        </div>
       </div>

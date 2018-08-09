@@ -9,8 +9,6 @@ class EditDrinkForm extends React.Component {
     this.props.fetchDrink(this.props.match.params.drinkId);
   }
 
-
-
   render() {
     return (
       <DrinkForm
