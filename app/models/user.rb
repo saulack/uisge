@@ -23,7 +23,6 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_one_attached :picture
-
   has_one_attached :mural
 
   has_many :drinks_added,
