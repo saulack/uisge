@@ -9,7 +9,7 @@ class DrinkShow extends React.Component {
   }
 
   render() {
-    const drink = this.props.drink || {}
+    const drink = this.props.drink || {};
     return (
       <div className="single-drink-parent">
         <img className="big-label" src={drink.photoUrl}/>
